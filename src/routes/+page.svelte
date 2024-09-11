@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Home Page JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="/obfuscate.js" defer></script>
     <script defer>
     AOS.init({

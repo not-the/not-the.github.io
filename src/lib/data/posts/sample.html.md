@@ -1,12 +1,12 @@
-[data]
+---
 title: sample.html
 description: Description goes here
 author: not-the
 banner: /assets/banner/gradient_2.png
 
-posted: 1/1/1970
+created: 1/1/1970
 modified: 1/1/1970
-[/data]
+---
 ## Header 2
 ### Header 3
 #### Header 4
