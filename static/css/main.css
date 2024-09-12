@@ -1018,6 +1018,7 @@ nav .button_icon {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
 }
+.project_link > span { display: none; }
 .project_link + h3:after {
     content: "->";
     padding-left: 8px;

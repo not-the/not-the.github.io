@@ -1,8 +1,51 @@
 <!-- JS -->
 <script>
+    import { onMount } from 'svelte'
+
     // Components
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
+
+    import Project from '$lib/components/Project.svelte'
+
+    // Data
+    import data from "$lib/data/data.json"
+
+
+    onMount(() => {
+        AOS.init({
+            // Global settings:
+            disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+            startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+            initClassName: 'aos-init', // class applied after initialization
+            animatedClassName: 'aos-animate', // class applied on animation
+            useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+            disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+            debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+            throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+            
+
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 800, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+        });
+
+        // Mouse highlight
+        // Inspired by https://codepen.io/Hyperplexed/pen/MWQeYLW
+        document.getElementById("skills_mouse_area").onmousemove = event => {
+            requestAnimationFrame(() => {
+                for(element of document.getElementsByClassName("mouse_glow")) {
+                    let rect = element.getBoundingClientRect();
+                    element.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
+                    element.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
+                };
+            });
+        }
+    });
 </script>
 
 
@@ -24,7 +67,7 @@
     <!-- <meta name="twitter:card" content="summary_large_image"> -->
 
     <!-- JS -->
-    <script src="/index.js" defer></script>
+    <script src="/js/index.js" defer></script>
 
     <!-- not-util -->
     <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
@@ -35,42 +78,7 @@
 
     <!-- Home Page JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="/obfuscate.js" defer></script>
-    <script defer>
-    AOS.init({
-        // Global settings:
-        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-        initClassName: 'aos-init', // class applied after initialization
-        animatedClassName: 'aos-animate', // class applied on animation
-        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-        
-
-        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-        offset: 120, // offset (in px) from the original trigger point
-        delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 800, // values from 0 to 3000, with step 50ms
-        easing: 'ease', // default easing for AOS animations
-        once: false, // whether animation should happen only once - while scrolling down
-        mirror: false, // whether elements should animate out while scrolling past them
-    });
-    </script>
-    <script defer>
-    // Mouse highlight
-    // Inspired by https://codepen.io/Hyperplexed/pen/MWQeYLW
-    document.getElementById("skills_mouse_area").onmousemove = event => {
-        requestAnimationFrame(() => {
-            for(element of document.getElementsByClassName("mouse_glow")) {
-                let rect = element.getBoundingClientRect();
-                element.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`);
-                element.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`);
-            };
-        });
-    }
-    </script>
+    <script src="/js/obfuscate.js" defer></script>
 
 </svelte:head>
 
@@ -250,275 +258,18 @@
     
     <!-- List -->
     <div id="projects_list">
+        {#each data.projects as proj}
+            <Project data={proj} github={true} />
+        {/each}
 
-        <div class="project" id="sand-toy" style="background: var(--project-gradient), url(/assets/project/sandtoy\ scene.png) center 80% !important">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://not-the.github.io/sand-toy" class="project_link"></a>
-                        <h3>Sand Toy</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/sand-toy" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="mario-pixijs" style="background: var(--project-gradient), url(/assets/project/piximario.png) center 80% !important">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://mario.notkal.com/" class="project_link"></a>
-                        <h3>PIXI.JS Mario</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/mario-pixijs" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="character-creator" style="background: var(--project-gradient), url(/assets/project/character_creator_2.png)">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://notkal.com/Character-Creator" class="project_link"></a>
-                        <h3>Character Creator</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/character-creator" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="carrot-clicker" style="background: var(--project-gradient), url(/assets/project/carrot_clicker_big.png)">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://carrot.notkal.com" class="project_link"></a>
-                        <h3>Carrot Clicker</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/carrot-clicker" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="puzzle-cube" style="background: var(--project-gradient), url(/assets/project/rubiks2.png) right !important">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://rubiks.notkal.com/" class="project_link"></a>
-                        <h3>Rubik's Cube</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/puzzle-cube" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="gravity-toy">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://not-the.github.io/gravity-toy" class="project_link"></a>
-                        <h3>Gravity Toy</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/gravity-toy" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="maze-algorithm" style="background: var(--project-gradient), url(/assets/project/maze.png)">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://notkal.com/Maze-Algorithm" class="project_link"></a>
-                        <h3>Maze Algorithm</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/maze-algorithm" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="pong" style="background: var(--project-gradient), url(/assets/project/pong.png)">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://notkal.com/Pong" class="project_link"></a>
-                        <h3>Pong</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/pong" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="tictactoe" style="background: var(--project-gradient), url(/assets/project/ttt.png)">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://tictactoe.notkal.com" class="project_link"></a>
-                        <h3>Tic Tac Toe</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/tictactoe" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div><details><summary>Older projects</summary>
-        <div class="project" id="Mouse-Confetti" style="background: var(--project-gradient), url(/assets/project/confetti.png)">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://notkal.com/Mouse-Confetti" class="project_link"></a>
-                        <h3>HTML Confetti</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/Mouse-Confetti" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="loading-screens">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://not-the.github.io/Loading-Screens" class="project_link"></a>
-                        <h3>CSS Loading Screens</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/loading-screens" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="iss-tracker-app">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://notkal.com/iss-tracker-app/" class="project_link"></a>
-                        <h3>ISS Tracker</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/iss-tracker-app" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="geolocation-html">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://not-the.github.io/geolocation-html" class="project_link"></a>
-                        <h3>Geolocation</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/geolocation-html" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="js-pyramid">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://not-the.github.io/js-pyramid" class="project_link"></a>
-                        <h3>JS Pyramid</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/js-pyramid" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project" id="leap-years-list">
-            <div class="inner flex">
-                <div class="flex">
-                    <div>
-                        <a href="https://not-the.github.io/LeapYear" class="project_link"></a>
-                        <h3>Leap years list</h3>
-                        
-                    </div>
-                </div>
-                <div class="title_buttons flex">
-                    <a href="https://github.com/not-the/leap-years-list" class="label_github button bold small_button" target="_blank" rel="noreferrer" data-label="Github">
-                        <img src="/assets/icon/github.svg" alt="View on Github" class="button_icon" style="margin-right: 6px;"> <p>Github</p>
-                        <div class="button_shade"></div>
-                    </a>
-                </div>
-            </div>
-        </div></details></div>
+        <!-- Older projects -->
+        <details>
+            <summary>Older projects</summary>
+            {#each data.projects_older as proj}
+                <Project data={proj} github={true} />
+            {/each}
+        </details>
+    </div>
 
 </section>
 
@@ -557,7 +308,7 @@
             <img src="/assets/icon/mail_24dp_FILL1_wght600_GRAD0_opsz20.svg" alt="" class="icon white_icon">
             <div>
                 <strong>Email</strong>
-                <a role="button" tabindex="0" data-obfuscated>
+                <a href="javascript:;" role="button" tabindex="0" data-obfuscated>
                     Click to reveal
                 </a>
             </div>
