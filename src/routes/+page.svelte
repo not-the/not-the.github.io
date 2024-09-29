@@ -278,7 +278,8 @@
     <!-- Title -->
     <h2>Contact</h2>
 
-    <div id="contact_list">
+    <div id="contact_list" class="media_flex">
+        <!-- Left col -->
         <div class="contact_item" id="form">
             <div class="full_width" style="padding: 6px;">
                 <strong style="display: inline-block; padding-bottom: 12px; padding-left: 6px;">Send me a message:</strong>
@@ -304,22 +305,27 @@
                 </form>
             </div>
         </div>
-        <div class="contact_item flex" id="email">
-            <img src="/assets/icon/mail_24dp_FILL1_wght600_GRAD0_opsz20.svg" alt="" class="icon white_icon">
-            <div>
-                <strong>Email</strong>
-                <a href="javascript:;" role="button" tabindex="0" data-obfuscated>
-                    Click to reveal
-                </a>
-            </div>
-        </div>
 
-        <div class="contact_item flex">
-            <img src="/assets/icon/github.svg" alt="" class="icon">
-            <div>
-                <strong>Github</strong>
-                <a href="https://github.com/not-the" rel="noreferrer">https://github.com/not-the</a>
+        <!-- Right col -->
+        <div class="right_col">
+            <div class="contact_item" id="email">
+                <img src="/assets/icon/mail_24dp_FILL1_wght600_GRAD0_opsz20.svg" alt="" class="icon white_icon">
+                <div>
+                    <strong>Email</strong>
+                    <a href="javascript:;" role="button" tabindex="0" data-obfuscated>
+                        Click to reveal
+                    </a>
+                </div>
             </div>
+    
+            <div class="contact_item">
+                <img src="/assets/icon/github.svg" alt="" class="icon">
+                <div>
+                    <strong>Github</strong>
+                    <a href="https://github.com/not-the" rel="noreferrer">https://github.com/not-the</a>
+                </div>
+            </div>
+
         </div>
     </div>
 

@@ -312,19 +312,35 @@ body.theme_light .mouse_glow {
 
 /* Contact */
 #contact_list {
-    background-color: var(--lighter-bg);
-    border-radius: 8px;
-
     font-size: 12pt;
+
+    display: flex;
+    gap: 12px;
 }
-.contact_item { padding: 8px 12px; }
-.contact_item:not(:last-of-type) { border-bottom: 1px solid var(--border-darker); }
-.contact_item img {
+#contact_list > * {
+    flex: 1;
+}
+#contact_list > .right_col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.contact_item {
+    background-color: var(--lighter-bg);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+.contact_item img.icon {
     margin: 4px 12px 0 2px;
     width: 32px;
     height: 32px;
 
     opacity: 0.8;
+}
+.contact_item:target {
+    outline: 2px solid var(--accent-color);
+    /* border-left: 8px solid var(--accent-color); */
+    /* background-color: var(--nav-button-hover-bg); */
 }
 #contact_list a {
     display: block;

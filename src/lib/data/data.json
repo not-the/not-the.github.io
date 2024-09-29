@@ -20,14 +20,24 @@
             "hero": "/assets/project/sandtoy scene.png",
     
             "url": "https://not-the.github.io/sand-toy",
-            "about": "/pixijs-mario"
+            "about": "/"
+        },
+        {
+            "name": "NOT UNO",
+            "id": "not-uno",
+    
+            "hero": "/assets/project/not_uno_banner_notext.png",
+            "hero_position": "center",
+    
+            "url": "https://not-the.github.io/sand-toy",
+            "about": "/"
         },
         {
             "name": "PIXI.JS Mario",
             "id": "mario-pixijs",
     
             "hero": "/assets/project/piximario.png",
-            "hero_style": " center 80% !important",
+            "hero_position": "center 80%",
     
             "url": "https://mario.notkal.com/",
             "about": "/pixijs-mario"
@@ -35,7 +45,9 @@
         {
             "name": "Character Creator",
             "id": "character-creator",
+
             "hero": "/assets/project/character_creator_2.png",
+
             "url": "https://notkal.com/Character-Creator"
         },
         {
@@ -50,7 +62,7 @@
             "id": "puzzle-cube",
     
             "hero": "/assets/project/rubiks2.png",
-            "hero_style": " right !important",
+            "hero_position": "right !important",
     
             "url": "https://rubiks.notkal.com/",
             "about": "/projects/rubiks-cube"

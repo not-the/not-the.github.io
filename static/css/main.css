@@ -648,15 +648,6 @@ section:target h2 {
         background: linear-gradient(0deg, #51a2ff33 0%, transparent 25%);
     }
 }
-.contact_item:target {
-    outline: 2px solid var(--accent-color);
-    /* border-left: 8px solid var(--accent-color); */
-    /* background-color: var(--nav-button-hover-bg); */
-}
-.contact_item .icon {
-    width: 28px;
-    height: 28px;
-}
 .column {
     flex: 1;
     padding: 8px 0;
@@ -1037,7 +1028,7 @@ nav .button_icon {
     border-top: 1px solid var(--border-color);
 }
 #footer::before {
-    content: url(./assets/decoration/halftone.png);
+    content: url("/assets/decoration/halftone.png");
     position: absolute;
     right: 0; top: 0;
     height: 100%;

@@ -2,7 +2,8 @@
     export let data, github;
 
     const backgroundStyle = data.hero ?
-        `background: var(--project-gradient), url("${data.hero}")!important`
+        `background: var(--project-gradient), url("${data.hero}")};
+        background-position: ${data?.hero_position ?? "initial"} !important`
         : null;
 </script>
 
