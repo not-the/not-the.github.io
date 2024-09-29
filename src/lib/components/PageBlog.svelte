@@ -10,14 +10,8 @@
     export let file, slug;
 
     // Remove data section from document
-    let bodyRaw = file.split("---\r\n")[2];
-    console.log(`##### START PageBlog: ${slug}`);
-    console.log("### file");
-    console.log(file);
-    console.log("### bodyRaw");
-    console.log(bodyRaw);
+    let bodyRaw = file.split(/---\s*\r?\n/)[2];
     const body = marked(bodyRaw);
-    console.log(`##### END PageBlog`);
 
     let info = file
         .split('---')[1] // Get data section
