@@ -12,10 +12,10 @@
     // Remove data section from document
     const body = (() => {
         try {
-            return marked(file.split("---\r\n")[2])
+            return marked(file.split("---\r\n")[2]);
         } catch (error) {
             console.warn(`Marked: invalid input for slug "${slug}"`, error);
-            return "marked error";
+            return `Error parsing markdown file. Whoops! Info below:<br/><br/>${error.toString()}`;
         }
     })();
     let info = file
@@ -29,7 +29,7 @@
         });
     info = Object.fromEntries(info);
 
-    console.log(info);
+    // console.log(info);
 </script>
 
 

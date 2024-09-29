@@ -1,6 +1,7 @@
 ---
 title: About
 banner: /assets/banner/Crossroads 1.png
+description: About notkal.com, copyright information, & privacy policy
 ---
 
 <h2>Contact</h2>
@@ -65,7 +66,6 @@ banner: /assets/banner/Crossroads 1.png
         Ⓒ 2024 notkal.com<br/>
         All rights reserved
     </p>
-
     <ul>
         <li>
             <a href="https://www.pexels.com/video/changes-in-form-and-appearance-of-a-submerged-material-3163534/" target="_blank" rel="noreferrer">Header video</a> from <a href="https://www.pexels.com/">pexels.com</a>
