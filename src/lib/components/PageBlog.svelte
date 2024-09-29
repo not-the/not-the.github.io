@@ -14,8 +14,8 @@
     const body = marked(bodyRaw);
 
     let info = file
-        .split('---')[1] // Get data section
-        .split("\r\n") // Split at new lines
+        .split(/---\s*\r?\n/)[1] // Get data section
+        .split(/\r?\n/) // Split at new lines
         .filter(e => e !== "" && e !== "---") // Remove empty lines
         .map(e => { // Turn into object entry arrays & make keys lowercase
             let value = e.split(": ");
