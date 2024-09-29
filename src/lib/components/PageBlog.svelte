@@ -38,7 +38,7 @@
     <title>{info.title}</title>
 
     <!-- Visual -->
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/project.css">
     <meta name="theme-color" content="#171718"/>
 

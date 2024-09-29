@@ -5,7 +5,7 @@
     import file from '$lib/data/posts/about.md?raw'
 
 
-    const slug = "About"
+    const slug = "about"
 </script>
 
 <!-- HEAD -->
