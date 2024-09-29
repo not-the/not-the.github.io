@@ -11,6 +11,7 @@
 
     // Remove data section from document
     const body = (() => {
+        console.log(file);
         try {
             return marked(file.split("---\r\n")[2]);
         } catch (error) {
