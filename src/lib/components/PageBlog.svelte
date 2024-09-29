@@ -109,8 +109,8 @@
                     <div class="table_of_contents">
                         <b>Table of contents</b>
                         <hr>
-                        <a href="#article"><p>Article Tag</p></a>
-                        <a href="#another_article"><p>Another Article</p></a>
+                        <!-- <a href="#article"><p>Article Tag</p></a> -->
+                        <!-- <a href="#another_article"><p>Another Article</p></a> -->
                     </div>
                 </div>
             </div>
