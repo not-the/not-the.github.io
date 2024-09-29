@@ -58,7 +58,7 @@
 <!-- Header -->
 <header>
     <!-- Banner image -->
-    <div id="banner" class="banner" style={`background-image: url(${info.banner})`}></div>
+    <div id="banner" class="banner" style={`background-image: url('${info.banner}')`}></div>
 
     <!-- Title -->
     <div class="title_section container flex">

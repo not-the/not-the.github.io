@@ -1,5 +1,5 @@
 ---
-title: sample.html
+title: About
 banner: /assets/banner/Crossroads 1.png
 ---
 
