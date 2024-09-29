@@ -10,15 +10,12 @@
     export let file, slug;
 
     // Remove data section from document
-    const body = (() => {
-        console.log(file);
-        try {
-            return marked(file.split("---\r\n")[2]);
-        } catch (error) {
-            console.warn(`Marked: invalid input for slug "${slug}"`, error);
-            return `Error parsing markdown file. Whoops! Info below:<br/><br/>${error.toString()}`;
-        }
-    })();
+    let bodyRaw = file.split("---\r\n")[2];
+    console.log(`##### START PageBlog: ${slug}`);
+    console.log(bodyRaw);
+    const body = marked(bodyRaw);
+    console.log(`##### END PageBlog`);
+
     let info = file
         .split('---')[1] // Get data section
         .split("\r\n") // Split at new lines
