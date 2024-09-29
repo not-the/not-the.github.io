@@ -2,6 +2,7 @@
 title: About
 banner: /assets/banner/Crossroads 1.png
 description: About notkal.com, copyright information, & privacy policy
+hide_info: true
 ---
 
 <h2>Contact</h2>

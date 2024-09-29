@@ -8,7 +8,7 @@
 
 <!-- HEAD -->
 <svelte:head>
-    <title>notkal - Posts</title>
+    <title>Posts - notkal</title>
 
     <!-- Visual -->
     <link rel="stylesheet" href="/css/project.css">
@@ -18,16 +18,12 @@
 
     <!-- Meta -->
     <meta property="og:url" content="https://notkal.com/posts">
-    <meta property="og:title" content="notkal - Posts">
+    <meta property="og:title" content="Posts - notkal">
     <!-- <meta property="og:description" content="undefined"> -->
     <!-- <meta property="og:image" content=""> -->
     <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:site_name" content="notkal">
-
-    <!-- not-util -->
-    <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
-    <script src="https://code.notkal.com/not-util.js" crossorigin></script>
 </svelte:head>
 
 
@@ -35,7 +31,7 @@
 <!-- HTML -->
 
 <!---------- Navigation ---------->
-<Navbar />
+<Navbar activeTab="Blog" />
 
 <!-- Header -->
 <header>

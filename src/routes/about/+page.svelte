@@ -16,4 +16,4 @@
 
 
 <!-- JS -->
-<PageBlog {file} {slug} />
+<PageBlog {file} {slug} activeTab="About" />

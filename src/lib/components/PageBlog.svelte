@@ -7,15 +7,26 @@
     import Footer from '$lib/components/Footer.svelte'
 
     // Props
-    export let file, slug;
+    export let file, slug, activeTab;
+
+
+    const newLineRegex = /\r?\n/;
+    const headerRowNewLineRegex = /---\s*\r?\n/;
 
     // Remove data section from document
-    let bodyRaw = file.split(/---\s*\r?\n/)[2];
+    /** MD body with metadata removed */
+    const bodyRaw = file.split(headerRowNewLineRegex)[2];
+    /** Body parsed to HTML */
     const body = marked(bodyRaw);
 
+    // Table of contents
+    // const tableOfContents = bodyRaw.split(newLineRegex).filter(line => line.startsWith("#"));
+    // console.log(tableOfContents);
+
+    // Info
     let info = file
-        .split(/---\s*\r?\n/)[1] // Get data section
-        .split(/\r?\n/) // Split at new lines
+        .split(headerRowNewLineRegex)[1] // Get data section
+        .split(newLineRegex) // Split at new lines
         .filter(e => e !== "" && e !== "---") // Remove empty lines
         .map(e => { // Turn into object entry arrays & make keys lowercase
             let value = e.split(": ");
@@ -45,17 +56,13 @@
     <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:site_name" content="notkal.com">
-
-    <!-- not-util -->
-    <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
-    <script src="https://code.notkal.com/not-util.js" crossorigin></script>
 </svelte:head>
 
 
 <!-- HTML -->
 
 <!---------- Navigation ---------->
-<Navbar />
+<Navbar {activeTab} />
 
 <!-- Header -->
 <header>
@@ -101,12 +108,17 @@
                     </p>
                     <br/>
 
-                    <div class="table_of_contents">
-                        <b>Table of contents</b>
-                        <hr>
-                        <!-- <a href="#article"><p>Article Tag</p></a> -->
-                        <!-- <a href="#another_article"><p>Another Article</p></a> -->
-                    </div>
+                    {#if info.contents}
+                        <nav class="table_of_contents" aria-label="Contents">
+                            <b>Table of contents</b>
+                            <hr>
+                            <!-- <a href="#article"><p>Article Tag</p></a> -->
+                            <!-- <a href="#another_article"><p>Another Article</p></a> -->
+                            {#each JSON.parse(info.contents) as item}
+                                <a href="#another_article"><p>Another Article</p></a>
+                            {/each}
+                        </nav>
+                    {/if}
                 </div>
             </div>
         </div>

@@ -484,42 +484,42 @@ function articleCopyURL(event) {
 }
 
 /** Navbar styling */
-function updateNavStyling() {
-    // Nav
-    let activeTabs = [];
-    document.querySelectorAll('#nav a.nav_item').forEach(element => {
-        // Reset
-        element.classList.remove('active');
+// function updateNavStyling() {
+//     // Nav
+//     let activeTabs = [];
+//     document.querySelectorAll('#nav a.nav_item').forEach(element => {
+//         // Reset
+//         element.classList.remove('active');
 
-        // URL
-        const current = location;
-        const tab = new URL(element.href);
-        const currentPaths = current.pathname.split('/');
-        const tabPaths = tab.pathname.split('/');
+//         // URL
+//         const current = location;
+//         const tab = new URL(element.href);
+//         const currentPaths = current.pathname.split('/');
+//         const tabPaths = tab.pathname.split('/');
 
-        if(
-            currentPaths[1] === tabPaths[1] // Same path
-            && (tab.hash === '' || current.hash === tab.hash) // Tab respresents page fragment
-        ) {
-            activeTabs = [];
-            activeTabs.push(element);
-        }
-    });
+//         if(
+//             currentPaths[1] === tabPaths[1] // Same path
+//             && (tab.hash === '' || current.hash === tab.hash) // Tab respresents page fragment
+//         ) {
+//             activeTabs = [];
+//             activeTabs.push(element);
+//         }
+//     });
 
-    // Style
-    activeTabs.forEach(element => element.classList.add('active'));
+//     // Style
+//     activeTabs.forEach(element => element.classList.add('active'));
 
-    // Toast
-    if(location.hash.startsWith('#t=')) {
-        let data = location.hash.slice(3).replaceAll('%20', ' ').split(',');
-        toast.send(data[0], data[1], 8);
+//     // Toast
+//     if(location.hash.startsWith('#t=')) {
+//         let data = location.hash.slice(3).replaceAll('%20', ' ').split(',');
+//         toast.send(data[0], data[1], 8);
         
-        // Remove hash
-        // history.pushState("", document.title, window.location.pathname + window.location.search);
-    }
-}
-updateNavStyling();
-addEventListener('hashchange', updateNavStyling);
+//         // Remove hash
+//         // history.pushState("", document.title, window.location.pathname + window.location.search);
+//     }
+// }
+// updateNavStyling();
+// addEventListener('hashchange', updateNavStyling);
 
 // Event listeners
 //#region 

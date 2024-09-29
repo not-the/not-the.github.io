@@ -12,16 +12,6 @@
             "about": "/pixijs-mario"
         },
 
-
-        {
-            "name": "Sand Toy",
-            "id": "sand-toy",
-    
-            "hero": "/assets/project/sandtoy scene.png",
-    
-            "url": "https://not-the.github.io/sand-toy",
-            "about": "/"
-        },
         {
             "name": "NOT UNO",
             "id": "not-uno",
@@ -29,7 +19,16 @@
             "hero": "/assets/project/not_uno_banner_notext.png",
             "hero_position": "center",
     
-            "url": "https://not-the.github.io/sand-toy",
+            "url": "https://uno.notkal.com/",
+            "about": "/"
+        },
+        {
+            "name": "Sand Toy",
+            "id": "sand-toy",
+    
+            "hero": "/assets/project/sandtoy scene.png",
+    
+            "url": "https://sandtoy.notkal.com/",
             "about": "/"
         },
         {
@@ -80,7 +79,10 @@
 
             "url": "https://notkal.com/Maze-Algorithm",
             "about": "/projects/maze"
-        },
+        }
+    ],
+
+    "projects_older": [
         {
             "name": "Pong",
             "id": "pong",
@@ -96,10 +98,7 @@
 
             "url": "https://tictactoe.notkal.com",
             "about": "/projects/tic-tac-toe"
-        }
-    ],
-
-    "projects_older": [
+        },
         {
             "name": "HTML Confetti",
             "id": "Mouse-Confetti",

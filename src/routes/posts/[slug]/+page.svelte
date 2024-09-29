@@ -9,4 +9,4 @@
 </script>
 
 <!-- HTML -->
-<PageBlog {file} {slug} />
+<PageBlog {file} {slug} activeTab="Blog" />

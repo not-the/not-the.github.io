@@ -8,19 +8,15 @@
 
 <!-- HEAD -->
 <svelte:head>
-    <title>notkal - Page not found</title>
+    <title>Page not found - notkal</title>
 
     <!-- Visual -->
     <link rel="stylesheet" href="/css/project.css">
     <meta name="theme-color" content="#171718"/>
 
     <!-- Meta -->
-    <meta property="og:title" content="notkal - 404">
+    <meta property="og:title" content="404 - notkal">
     <meta property="og:description" content="Page not found">
-
-    <!-- not-util -->
-    <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
-    <script src="https://code.notkal.com/not-util.js" crossorigin></script>
 </svelte:head>
 
 

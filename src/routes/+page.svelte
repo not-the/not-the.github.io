@@ -5,11 +5,12 @@
     // Components
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
+    import AllProjects from '$lib/components/AllProjects.svelte'
 
-    import Project from '$lib/components/Project.svelte'
+    // import Project from '$lib/components/Project.svelte'
 
     // Data
-    import data from "$lib/data/data.json"
+    // import data from "$lib/data/data.json"
 
 
     onMount(() => {
@@ -66,13 +67,6 @@
     <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
     <!-- <meta name="twitter:card" content="summary_large_image"> -->
 
-    <!-- JS -->
-    <script src="/js/index.js" defer></script>
-
-    <!-- not-util -->
-    <link rel="stylesheet" href="https://code.notkal.com/not-util.css" crossorigin>
-    <script src="https://code.notkal.com/not-util.js" crossorigin></script>
-
     <!-- Animate on Scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -84,7 +78,7 @@
 
 <!-- HTML -->
 <!---------- Navigation ---------->
-<Navbar />
+<Navbar activeTab={"Home"} />
 
 <!---------- Main ---------->
 <main id="home" class="screen_height">
@@ -166,110 +160,16 @@
     <!-- <div class="wave_decoration white_icon"></div> -->
 </main>
 
-<!---------- Skills ---------->
-<div style="overflow-x: hidden;" id="skills_mouse_area">
-    <div id="portfolio"></div>
-    <section id="skills" class="container screen_height flex">
-        <div>
-            <h2>Skills & Experience</h2>
-    
-            <!-- List -->
-            <div id="skills_list">
-                <!-- HTML -->
-                <div class="skill mouse_glow" id="skill_html" data-aos="fade-right" data-aos-delay="0" data-aos-duration="1500">
-                    <div class="skill_content">
-                        <img src="/assets/image/html.png" alt="HTML5">
-                        <div>
-                            <h4>HTML5</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- CSS -->
-                <div class="skill mouse_glow" id="skill_css" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1100">
-                    <div class="skill_content">
-                        <img src="/assets/image/css.png" alt="CSS3">
-                        <div>
-                            <h4>CSS</h4>
-                            <!-- <p>Experience creating visually pleasing & responsive websites</p> -->
-                        </div>
-                    </div>
-                </div>
-                <!-- JS -->
-                <div class="skill mouse_glow" id="skill_js" data-aos="fade-right" data-aos-delay="110" data-aos-duration="650">
-                    <div class="skill_content">
-                        <img src="/assets/image/js.png" alt="JS">
-                        <div>
-                            <h4>Javascript</h4>
-                            <p>Experience with both frontend and backend Javascript</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- NodeJS -->
-                <div class="skill mouse_glow" id="skill_node" data-aos="fade-left"data-aos-delay="150" data-aos-duration="900">
-                    <div class="skill_content">
-                        <img src="/assets/image/nodejs.png" alt="NodeJS">
-                        <div>
-                            <h4>NodeJS</h4>
-                            <p>Experience creating web servers using NodeJS</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cloud Platforms -->
-                <div class="skill mouse_glow" id="skill_cloud" data-aos="fade-right">
-                    <div class="skill_content">
-                    <img src="/assets/icon/cloud.svg" alt="Cloud" class="icon" data-aos-delay="160" data-aos-duration="1200">
-                        <div>
-                            <h4>Cloud Platforms</h4>
-                            <p>Experience with Amazon Web Services, Google Cloud Platform, Netlify, Heroku, & Cloudflare</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Image Editing -->
-                <div class="skill mouse_glow" id="skill_photoshop" data-aos="fade-left" data-aos-delay="170" data-aos-duration="1350">
-                    <div class="skill_content">
-                        <img src="/assets/image/photoshop.png" alt="Photoshop">
-                        <div>
-                            <h4>Image Manipulation</h4>
-                            <p>Proficient in GIMP, Photoshop and MS Paint</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="visual_layer">
-                <div class="circle"></div>
-                <div class="triangle"></div>
-            </div>
-        </div>
-    </section>
-</div>
-
-
-<!-- Past Work -->
-<!-- <div id="work" class="container doc">
-    <h2>Past Work</h2>
-</div> -->
-
 
 <!---------- Projects ---------->
+<br/>
+<br/>
 <section id="projects" class="container">
     <!-- Title -->
     <h2>Projects</h2>
     
     <!-- List -->
-    <div id="projects_list">
-        {#each data.projects as proj}
-            <Project data={proj} github={true} />
-        {/each}
-
-        <!-- Older projects -->
-        <details>
-            <summary>Older projects</summary>
-            {#each data.projects_older as proj}
-                <Project data={proj} github={true} />
-            {/each}
-        </details>
-    </div>
+    <AllProjects />
 
 </section>
 

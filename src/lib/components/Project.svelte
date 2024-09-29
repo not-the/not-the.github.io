@@ -1,15 +1,17 @@
 <script>
-    export let data, github;
+    export let data, github, style;
 
     const backgroundStyle = data.hero ?
         `background: var(--project-gradient), url('${data.hero}');
         ${data?.hero_position ? `background-position: ${data?.hero_position ?? "center"} !important` : ""}}`
         : null;
+
+    const classes = `project ${style??""}`;
 </script>
 
 <!-- HTML -->
 {#if !data.hidden}
-    <div class="project" id={data.id} style={backgroundStyle}>
+    <div class={classes} id={data.id} style={backgroundStyle}>
         <div class="inner flex">
             <!-- Title -->
             <div class="flex">

@@ -1,3 +1,37 @@
+<script>
+    import { onMount } from "svelte";
+
+    export let activeTab;
+
+
+    /** Nav list */
+    const navList = [
+        {
+            name: "Home",
+            href: "/"
+        },
+        {
+            name: "Projects",
+            href: "/projects/",
+            onclick: "toggleMenu()"
+        },
+        {
+            name: "Blog",
+            href: "/posts/"
+        },
+        {
+            name: "About",
+            href: "/about/"
+        }
+    ];
+
+
+    function isActiveNav(href="") {
+        if(href === activeTab) return true;
+    }
+</script>
+
+<!-- Navbar -->
 <nav id="nav" class="overlay_element flex nav_transparent">
     <!-- Menu button -->
     <div role="button" tabindex="0" id="menu_button" class="nav_button">
@@ -10,12 +44,9 @@
     <div class="flex" id="hamburger_menu">
         <!-- Nav items -->
         <div id="nav_list" class="flex">
-            <a href="/" class="nav_item">Home</a>
-            <!-- <a href="/#portfolio" class="nav_item" onclick="toggleMenu()">Portfolio</a> -->
-            <a href="/#projects" class="nav_item" onclick="toggleMenu()">Projects</a>
-            <!-- <a href="/#contact" class="nav_item" onclick="toggleMenu()">Contact</a> -->
-            <a href="/posts/" class="nav_item">Blog</a>
-            <a href="/about/" class="nav_item">About</a>
+            {#each navList as { name, href, onclick }}
+                <a class="nav_item" {href} {onclick} data-active={isActiveNav(name)} >{name}</a>
+            {/each}
         </div>
 
         <!-- Additional buttons -->

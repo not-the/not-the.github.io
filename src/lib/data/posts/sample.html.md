@@ -13,6 +13,8 @@ modified: 1970-01-01T05:00:00.000Z
 ##### Header 5
 ##### Header 6
 
+<br/>
+
 Normal paragraph. <a href="#">Link to somewhere</a>. You can have <b>bold</b>, <span class="emphasize">emphasized</span>, or **bold & emphasized text**, *italicized text*, <sup>Superscript</sup> and <sub>subsscript</sub> too.
 
 <p class="big_letter">
@@ -67,14 +69,25 @@ Normal paragraph. <a href="#">Link to somewhere</a>. You can have <b>bold</b>, <
 </table>
 <br/>
 
-<code class="block" data-lang="js"><span class="code-comment">// Code block containing code
+`small codeblock`
+
+```js
+/** Scrolls page to top */
+function toTop(closemenu=false) &lbrace
+window.scrollTo(0, 0);
+document.activeElement.blur(); // Move keyboard navigation back to start
+if(closemenu) toggleMenu();
+}
+```
+
+<pre><code data-lang="js"><span class="code-comment">// Code block containing code
 
 /** Scrolls page to top */</span>
 <span class="code-boolean">function</span> <span class="code-function">toTop</span>(<span class="code-variable">closemenu</span>=<span class="code-boolean">false</span>) &lbrace
 <span class="code-variable">window</span>.<span class="code-function">scrollTo</span>(<span class="code-number">0</span>, <span class="code-number">0</span>);
 <span class="code-variable">document</span>.<span class="code-variable">activeElement</span>.<span class="code-function">blur</span>(); <span class="code-comment">// Move keyboard navigation back to start</span>
 <span class="code-keyword">if</span>(<span class="code-variable">closemenu</span>) <span class="code-function">toggleMenu</span>();
-}</code>
+}</code></pre>
 
 <p>This is <code>Inline code!</code></p>
 
@@ -143,14 +156,14 @@ Normal paragraph. <a href="#">Link to somewhere</a>. You can have <b>bold</b>, <
     </label><br/>
 </p>
 
-    <b class="emphasize">Switch checkbox:</b><br/>
-    <label class="switch">
-        <input type="checkbox">
-        <span></span>
-        <div class="on">I</div>
-        <div class="off">O</div>
-    </label>
-    <br/><br/>
+<b class="emphasize">Switch checkbox:</b><br/>
+<label class="switch">
+    <input type="checkbox">
+    <span></span>
+    <div class="on">I</div>
+    <div class="off">O</div>
+</label>
+<br/><br/>
 
 <p>
     <b class="emphasize">Choose one:</b><br/>
