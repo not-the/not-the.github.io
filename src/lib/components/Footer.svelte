@@ -20,7 +20,7 @@
         <!-- Copyright -->
         <p class="emphasize">Ⓒ 2024 notkal.com</p>
         <br/>
-        <a role="button" tabindex="0" onclick="toTop()">Return to top</a>
+        <a href="javascript:;" role="button" tabindex="0" onclick="toTop()">Return to top</a>
     </div>
 </footer>
 <div id="footer_gradient"></div>

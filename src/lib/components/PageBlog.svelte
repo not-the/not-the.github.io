@@ -12,6 +12,9 @@
     // Remove data section from document
     let bodyRaw = file.split("---\r\n")[2];
     console.log(`##### START PageBlog: ${slug}`);
+    console.log("### file");
+    console.log(file);
+    console.log("### bodyRaw");
     console.log(bodyRaw);
     const body = marked(bodyRaw);
     console.log(`##### END PageBlog`);
