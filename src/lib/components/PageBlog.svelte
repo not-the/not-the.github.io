@@ -10,7 +10,14 @@
     export let file, slug;
 
     // Remove data section from document
-    const body = marked(file.split("---\r\n")[2]);
+    const body = (() => {
+        try {
+            return marked(file.split("---\r\n")[2])
+        } catch (error) {
+            console.warn(`Marked: invalid input for slug "${slug}"`, error);
+            return "marked error";
+        }
+    })();
     let info = file
         .split('---')[1] // Get data section
         .split("\r\n") // Split at new lines
