@@ -42,23 +42,28 @@ header .title_section #path a:hover { color: white; }
 #main {
     width: 100%;
     /* text-align: justify; */
+
+    gap: 24px;
     
-    padding: 24px;
+    /* padding: 24px; */
     margin-bottom: 24px;
-    background-color: var(--main-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
+    /* background-color: var(--main-bg);
+    border: 1px solid var(--border-darker);
+    border-radius: 12px; */
 }
 /* Info */
 .info_column {
     width: 100%;
     max-width: 220px;
-    border-right: 1px solid var(--border-color);
+    /* padding: 24px; */
+
+    /* border-right: 1px solid var(--border-color); */
     padding-right: 20px;
     padding-bottom: 20px;
 
     flex-shrink: 0;
 }
+.info
 .info_content {
     position: sticky;
     top: 64px;
@@ -77,14 +82,19 @@ header .title_section #path a:hover { color: white; }
 /* Body */
 .body_column {
     width: 100%;
+    padding: 24px;
+    background-color: var(--main-bg);
+    border: 1px solid var(--border-darker);
+    border-radius: 12px;
 }
 .body_column:not(:only-child) { padding-left: 20px; }
 .user_card {
-    width: 100%;
-    /* background-color: var(--lighter-bg); */
-    /* padding: 6px 12px; */
-    border-radius: 100px;
+    background-color: var(--main-bg);
+    border: 1px solid var(--border-darker);
+    border-radius: 12px;
+    padding: 6px 12px;
     align-items: center;
+    
 }
 .user_card img {
     height: 32px;

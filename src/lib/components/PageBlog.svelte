@@ -36,6 +36,19 @@
     info = Object.fromEntries(info);
 
     // console.log(info);
+
+
+    // Format date
+    function formatDate(value) {
+        // Convert to date object if needed
+        const date = typeof value === 'object' ? value : new Date(value);
+        
+        return date.toLocaleDateString('en-US',  {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    }
 </script>
 
 
@@ -86,6 +99,11 @@
 
 <!---------- Main ---------->
 <main id="main" class="doc container flex">
+    <!-- Body -->
+    <div class="body_column">
+        {@html body}
+    </div>
+
     <!-- Sidebar -->
     {#if !info.hide_info}
         <div class="info_column">
@@ -103,8 +121,13 @@
 
                 <div class="emphasize">
                     <p class="emphasize">
-                        Posted <span>{info.created}</span><br/>
-                        <i class="secondary_text">Last updated <span>{info.modified}</span></i>
+                        Posted<br /><span>{formatDate(info.created)}</span><br/>
+                    </p>
+                    <p class="secondary_text">
+                        <i>
+                            Last updated<br />
+                            <span>{formatDate(info.modified)}</span>
+                        </i>
                     </p>
                     <br/>
 
@@ -123,11 +146,6 @@
             </div>
         </div>
     {/if}
-
-    <!-- Body -->
-    <div class="body_column">
-        {@html body}
-    </div>
 </main>
 
 <!-- Footer -->
