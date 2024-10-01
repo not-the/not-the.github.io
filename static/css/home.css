@@ -324,6 +324,7 @@ body.theme_light .mouse_glow {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    max-width: 33%;
 }
 .contact_item {
     background-color: var(--lighter-bg);
@@ -362,6 +363,13 @@ body.theme_light .mouse_glow {
     .project .title_buttons > .button:first-of-type { margin-left: 0; }
 
     .project h3:after { opacity: 1; transform: translate(-50%, 0px); }
+
+    /* Contact */
+    #contact_list > .right_col {
+        max-width: unset;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
 }
 
 @media print {

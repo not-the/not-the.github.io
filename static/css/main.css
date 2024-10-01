@@ -382,7 +382,7 @@ select,
     font-weight: 500;
     font-size: 11pt;
 
-    background-color: rgb(23, 23, 24, 0.8); /* Dark mode transparent-bg */
+    background-color: var(--night-transparent-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
@@ -394,7 +394,7 @@ select,
     display: inline-block;
     position: relative;
     overflow: hidden;
-    transition: transform 0.1s ease;
+    transition: all 0.1s ease;
     z-index: 1; /* Makes button_shade work in safari */
 }
 button > *,
@@ -403,6 +403,8 @@ button > *,
     vertical-align: middle;
     font-family: var(--title-font);
 }
+
+/* Button hover */
 /* button:hover,
 input:hover,
 textarea:hover,
@@ -432,6 +434,25 @@ button:focus-visible .button_icon,
 a:focus-visible .button .button_icon {
     filter: none;
 }
+
+/* Button disabled */
+button[disabled],
+.button[disabled],
+a[disabled] .button {
+    --border-color: var(--border-darker);
+    color: gray;
+    background-color: var(--main-bg);
+
+    cursor: not-allowed;
+    /* pointer-events: none; */
+}
+button[disabled] .button_shade,
+.button[disabled] .button_shade,
+a[disabled] .button .button_shade {
+    display: none;
+}
+
+/* Button colors */
 .button_white { background-color: rgba(255, 255, 255, 0.85); color: black; }
 .button_blue { background-color: var(--accent-color); --border-color: var(--accent-color); }
 .button_red { background-color: rgb(236, 33, 67); }
@@ -440,6 +461,7 @@ a:focus-visible .button .button_icon {
     min-width: unset !important;
     /* width: 39px; */
 }
+
 label {
     color: var(--text);
 }
@@ -999,9 +1021,6 @@ nav .button_icon {
     border-color: var(--text); /* --text */
     box-shadow: var(--project-box-shadow-hover);
     z-index: 1;
-}
-.project > .inner {
-    align-items: center;
 }
 .project > .inner > div {
     align-items: center;

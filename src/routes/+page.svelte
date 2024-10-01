@@ -12,6 +12,11 @@
     // Data
     // import data from "$lib/data/data.json"
 
+    let contactFormEmail = '';
+    let contactFormMessage = '';
+
+    $: contactFormFilled = contactFormEmail.length !== 0 && contactFormMessage.length !== 0;
+
 
     onMount(() => {
         AOS.init({
@@ -182,21 +187,21 @@
         <!-- Left col -->
         <div class="contact_item" id="form">
             <div class="full_width" style="padding: 6px;">
-                <strong style="display: inline-block; padding-bottom: 12px; padding-left: 6px;">Send me a message:</strong>
+                <p class="secondary_text" style="display: inline-block; padding-bottom: 12px; padding-left: 3px;">Send me a message</p>
                 <form action="https://formsubmit.co/ab074334a2691755cc5fc1c4e5d11589" method="POST">
                     <input type="hidden" name="_next" value="https://notkal.com/#t=Message%20Sent">
                     <input type="hidden" name="_template" value="table">
 
                     <div class="flex">
                         <!-- <input type="text" name="name" placeholder="Name" required value="GAMER"/> -->
-                        <input type="email" name="email" placeholder="Your email" required/>
+                        <input type="email" name="email" placeholder="Your email" required bind:value={contactFormEmail}/>
                         <input type="subject" name="subject" placeholder="Subject (optional)"/>
                     </div>
 
-                    <textarea placeholder="Your Message" name="message" rows="6" required></textarea>
+                    <textarea placeholder="Message..." name="message" rows="6" required bind:value={contactFormMessage}></textarea>
 
                     <br/><br/>
-                    <button type="submit" class="button button_blue bold full_width">
+                    <button type="submit" class="button button_blue bold full_width" disabled={!contactFormFilled}>
                         <p>Send</p>
                         <div class="button_shade"></div>
                     </button>
