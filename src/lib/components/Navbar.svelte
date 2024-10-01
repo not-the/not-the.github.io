@@ -12,8 +12,8 @@
         },
         {
             name: "Projects",
-            href: "/projects/",
-            onclick: "toggleMenu()"
+            href: "/projects/"
+            //, onclick: "toggleMenu()"
         },
         {
             name: "Blog",
@@ -51,17 +51,23 @@
 
         <!-- Additional buttons -->
         <div class="nav_item nav_right flex">
+            <!-- Search -->
             <div role="button" tabindex="0" id="search_button" class="nav_button">
                 <img src="/assets/icon/search_FILL0_wght600_GRAD0_opsz24.svg" alt="Search" id="search_button" class="icon button_icon" style="transform: scale(1.3, 1.3) translateY(1px);">
             </div>
+            <!-- Github -->
             <a href="https://github.com/not-the" rel="noreferrer" title="Github">
                 <div class="nav_button">
                     <img src="/assets/icon/github.svg" alt="Github" class="icon button_icon">
                 </div>
             </a>
+            <!-- Settings -->
             <div role="button" tabindex="0" id="options_button" class="nav_button">
                 <img src="/assets/icon/settings.svg" alt="Options" class="icon button_icon">
             </div>
         </div>
     </div>
+
+    <!-- Selector -->
+    <!-- <div class="nav_selector"/> -->
 </nav>
