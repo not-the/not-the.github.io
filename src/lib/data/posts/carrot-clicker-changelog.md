@@ -182,11 +182,11 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
         </li>
         <figure>
             <div class="gallery pixel_gallery">
-                <img src="./assets/1.17.1/baker_bill.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17.1/business_bill.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17.1/bill_ugly_sweater.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17.1/grandma_belle.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17.1/safety_greg.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17.1/baker_bill.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17.1/business_bill.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17.1/bill_ugly_sweater.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17.1/grandma_belle.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17.1/safety_greg.png" alt="" loading="lazy" tabindex="0">
             </div>
             <figcaption>Click to enlarge</figcaption>
         </figure>
@@ -226,15 +226,15 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
         </li>
         <figure>
             <div class="gallery pixel_gallery">
-                <img src="./assets/1.17/Not So Useless.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Complete Collection.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Extreme Farming.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Carrot Continent.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Two's Company.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Heavy Metal new.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Fancy Bill NEW.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Biker Bill NEW.png" alt="" loading="lazy" tabindex="0">
-                <img src="./assets/1.17/Dollar Bill NEW.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Not So Useless.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Complete Collection.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Extreme Farming.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Carrot Continent.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Two's Company.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Heavy Metal new.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Fancy Bill NEW.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Biker Bill NEW.png" alt="" loading="lazy" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/1.17/Dollar Bill NEW.png" alt="" loading="lazy" tabindex="0">
             </div>
             <figcaption>Click to enlarge</figcaption>
         </figure>
@@ -415,7 +415,7 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
                 <li>No tool 6 yet though</li>
             </ul>
             <figure>
-                <img src="./assets/new_tools_solid_bg.png" alt="New tool sprites" tabindex="0">
+                <img src="/posts/carrot-clicker-changelog/assets/new_tools_solid_bg.png" alt="New tool sprites" tabindex="0">
                 <figcaption>Left to right: Hoe, Sturdy Hoe, Scythe, Plough, Gilded Hoe</figcaption>
             </figure>
         </li>
@@ -501,8 +501,8 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
             Visual overhaul of the mini info section
             <figure>
                 <div class="gallery">
-                    <img src="./assets/mini info new.png" alt="" loading="lazy" tabindex="0">
-                    <img src="./assets/mini info old.png" alt="" loading="lazy" tabindex="0">
+                    <img src="/posts/carrot-clicker-changelog/assets/mini info new.png" alt="" loading="lazy" tabindex="0">
+                    <img src="/posts/carrot-clicker-changelog/assets/mini info old.png" alt="" loading="lazy" tabindex="0">
                 </div>
                 <figcaption>Click to enlarge</figcaption>
             </figure>
@@ -511,8 +511,8 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
             All sliders in settings now have number inputs alongside them
             <figure>
                 <div class="gallery">
-                    <img src="./assets/slider new.png" alt="" loading="lazy" tabindex="0">
-                    <img src="./assets/slider old.png" alt="" loading="lazy" tabindex="0">
+                    <img src="/posts/carrot-clicker-changelog/assets/slider new.png" alt="" loading="lazy" tabindex="0">
+                    <img src="/posts/carrot-clicker-changelog/assets/slider old.png" alt="" loading="lazy" tabindex="0">
                 </div>
             </figure>
         </li>
@@ -523,8 +523,8 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
             Reduced the amount of CSS the oled theme uses and fixed some UI elements
             <figure>
                 <div class="gallery">
-                    <img src="./assets/oled NEW.png" alt="" loading="lazy" tabindex="0">
-                    <img src="./assets/oled old.png" alt="" loading="lazy" tabindex="0">
+                    <img src="/posts/carrot-clicker-changelog/assets/oled NEW.png" alt="" loading="lazy" tabindex="0">
+                    <img src="/posts/carrot-clicker-changelog/assets/oled old.png" alt="" loading="lazy" tabindex="0">
                 </div>
             </figure>
         </li>
@@ -532,7 +532,7 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
         <h3>Dev tools:</h3>
         <li>
             Replaced character levels with input boxes that can only be interacted with in dev mode
-            <video src="./assets/setlevel.mp4" controls="" loop="" muted="" playsinline="" preload="metadata"></video>
+            <video src="/posts/carrot-clicker-changelog/assets/setlevel.mp4" controls="" loop="" muted="" playsinline="" preload="metadata"></video>
         </li>
         <li>Putting #log in the address bar will send console.log, console.warn, and console.error as toasts (experimental, and is very spammy)</li>
     </ul>
