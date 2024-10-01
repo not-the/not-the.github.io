@@ -93,7 +93,7 @@ contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1
         This is an update for the stable branch only. Changes will be merged when the development version isn't unstable.
     </p>
     <ul>
-        <li>Fixed incorrect/placeholder tool names in statistics (<a href="#74">Issue #74</a>)</li>
+        <li>Fixed incorrect/placeholder tool names in statistics (<a href="https://github.com/not-the/Carrot-Clicker/issues/74">Issue #74</a>)</li>
         <li>Added adsense advertisements. Clicking the X button -&gt; report -&gt; ad covered content will hide them.</li>
     </ul>
 </article>
