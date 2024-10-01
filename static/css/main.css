@@ -1302,7 +1302,8 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     }
 }
 .details_dialog > summary { width: unset; }
-.details_dialog > summary:hover { text-decoration: underline; }
+.details_dialog > summary:hover,
+.details_dialog > summary:focus-visible { text-decoration: underline; }
 .details_dialog > summary::marker {
     content: "";
 }
