@@ -36,7 +36,8 @@
     /* Text and elements */
     --night-text:                white;
     --night-secondary-text:      rgb(200, 200, 200);
-    --night-placeholder-text:    #757575;
+    /* --night-tertiary-text:      rgb(146, 146, 146); */
+    --night-placeholder-text:    rgb(170, 170, 170);
     --night-link-color:          #51a2ff;
 
     /* Accents */
@@ -61,6 +62,7 @@
     /* Text and elements */
     --day-text:                rgb(28, 11, 48);
     --day-secondary-text:      rgb(38, 37, 41);
+    /* --day-tertiary-text:       rgb(170, 170, 170); */
     --day-link-color:          rgb(35, 119, 214);
 
     /* Accents */
@@ -87,6 +89,7 @@
     /* Text and elements */
     --text:                var(--night-text);
     --secondary-text:      var(--night-secondary-text);
+    /* --tertiary-text:       var(--night-tertiary-text); */
     --placeholder-text:    var(--night-placeholder-text);
     --link-color:          var(--night-link-color);
 
@@ -116,6 +119,7 @@
         /* Text and elements */
         --text:                var(--day-text);
         --secondary-text:      var(--day-secondary-text);
+        /* --tertiary-text:       var(--day-tertiary-text); */
         --link-color:          var(--day-link-color);
     
         /* Accents */
@@ -161,6 +165,7 @@ body.theme_light {
     /* Text and elements */
     --text:                var(--day-text);
     --secondary-text:      var(--day-secondary-text);
+    /* --tertiary-text:       var(--day-tertiary-text); */
     --link-color:          var(--day-link-color);
 
     /* Accents */
@@ -196,6 +201,7 @@ body.theme_oled {
     /* Text and elements */
     --text:                var(--night-text);
     --secondary-text:      var(--night-secondary-text);
+    /* --tertiary-text:       var(--night-tertiary-text); */
     --link-color:          var(--night-link-color);
 
     /* Accents */
@@ -440,11 +446,12 @@ button[disabled],
 .button[disabled],
 a[disabled] .button {
     --border-color: var(--border-darker);
-    color: gray;
-    background-color: var(--main-bg);
+    color: var(--placeholder-text);
+    background-color: var(--night-transparent-bg);
 
     cursor: not-allowed;
     /* pointer-events: none; */
+    box-shadow: none;
 }
 button[disabled] .button_shade,
 .button[disabled] .button_shade,
@@ -590,9 +597,9 @@ textarea:focus {
     border-color: var(--secondary-text);
     /* background-color: var(--lighter-bg); */
 }
-input[type="text"]::placeholder,
-input[type="email"]::placeholder {
-    color: rgb(146, 146, 146);
+input::placeholder,
+textarea::placeholder {
+    color: var(--placeholder-text);
 }
 
 
