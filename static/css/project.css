@@ -33,6 +33,16 @@ header .title_section {
 header .title_section h1 {
     color: white;
     font-size: 32pt;
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+}
+.title_left {
+    width: 100%;
+}
+header .title_section .blog_title_container {
+    height: 51px;
+    position: relative;
 }
 header .title_section #path { margin-left: 3px; }
 header .title_section #path a { color: rgb(190, 190, 190); }
@@ -43,7 +53,7 @@ header .title_section #path a:hover { color: white; }
     width: 100%;
     /* text-align: justify; */
 
-    gap: 24px;
+    gap: 12px;
     
     /* padding: 24px; */
     margin-bottom: 24px;
@@ -55,20 +65,46 @@ header .title_section #path a:hover { color: white; }
 .info_column {
     width: 100%;
     max-width: 220px;
-    /* padding: 24px; */
-
-    /* border-right: 1px solid var(--border-color); */
-    padding-right: 20px;
-    padding-bottom: 20px;
-
     flex-shrink: 0;
 }
-.info
+/* .info */
 .info_content {
     position: sticky;
     top: 64px;
     overflow-y: auto;
     max-height: calc(100vh - 90px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.info_content > *:first-child {
+    background-color: var(--main-bg);
+    border: 1px solid var(--border-darker);
+    border-radius: 12px;
+}
+.user_card {
+    padding: 6px 12px;
+    align-items: center;
+}
+.user_card:hover,
+.user_card:focus-visible {
+    background-color: var(--lighter-bg);
+    border-color: var(--text);
+    text-decoration: none !important;
+}
+.user_card img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+    /* margin-bottom: 12px; */
+}
+.info_meta {
+    padding: 6px 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    column-gap: 12px;
 }
 #box_art {
     background-color: var(--lighter-bg);
@@ -82,29 +118,11 @@ header .title_section #path a:hover { color: white; }
 /* Body */
 .body_column {
     width: 100%;
-    padding: 24px;
+    padding: 24px 28px;
     background-color: var(--main-bg);
     border: 1px solid var(--border-darker);
     border-radius: 12px;
 }
-.body_column:not(:only-child) { padding-left: 20px; }
-.user_card {
-    background-color: var(--main-bg);
-    border: 1px solid var(--border-darker);
-    border-radius: 12px;
-    padding: 6px 12px;
-    align-items: center;
-    
-}
-.user_card img {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    margin-right: 12px;
-    /* margin-bottom: 12px; */
-}
-.user_card p { margin: 0 !important; }
-
 iframe {
     max-width: 100%;
 }
@@ -134,44 +152,49 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
 
 /* Table of contents */
 .table_of_contents {
-    background-color: var(--lighter-bg);
-    padding: 12px;
-    border-radius: 6px;
+    /* background-color: var(--lighter-bg); */
+    /* padding: 12px; */
+    border-radius: 12px;
+    padding: 6px 12px;
 }
-.table_of_contents p {
-    padding: 3px 0;
+.table_of_contents ul {
+    padding: 0;
+    list-style-type: none;
+}
+.table_of_contents li {
+    padding: 0;
+    margin: 0;
+}
+.table_of_contents a {
+    color: var(--secondary-color);
+}
+.table_of_contents a > p {
+    padding: 3px 6px;
     margin: 0 !important;
     border-radius: 6px;
 }
-.table_of_contents p:hover {
+.table_of_contents a > p:hover {
     background-color: var(--lighter-bg);
     color: var(--text) !important;
 }
 
 
+
 /* Mobile layout */
 @media screen and (max-width: 600px) {
-    #banner { height: 400px; }
     #main, header .title_section { flex-direction: column; }
     .title_buttons { padding-top: 6px; }
     #main {
-        border-radius: 0;
-        border: none;
-        border-top: 1px solid var(--border-color);
+        flex-direction: column-reverse;
     }
     .info_column { 
-        border: none;
-        border-bottom: 1px solid var(--border-color);
-        max-width: 100%;
-        margin-bottom: 12px;
-        padding-bottom: 0;
-        padding-right: 0;
+        max-width: unset;
     }
-    .body_column { padding: 12px 6px 0; }
     .info_content {
         position: unset;
-        top: 64px;
-        max-height: 312px;
-        overflow: auto;
+        max-height: unset;
+    }
+    .info_meta {
+        text-align: center;
     }
 }

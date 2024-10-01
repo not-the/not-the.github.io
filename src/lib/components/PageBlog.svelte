@@ -5,6 +5,7 @@
     // Components
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
+    import Header from '$lib/components/Header.svelte'
 
     // Props
     export let file, slug, activeTab;
@@ -78,23 +79,7 @@
 <Navbar {activeTab} />
 
 <!-- Header -->
-<header>
-    <!-- Banner image -->
-    <div id="banner" class="banner" style={`background-image: url('${info.banner}')`}></div>
-
-    <!-- Title -->
-    <div class="title_section container flex">
-        <div>
-            <h1>{info.title}</h1>
-            <p id="path" class="secondary_text gray">
-                <a href="/">notkal</a> / <a href="/posts">Posts</a> / <a href={`./${slug}`}>{info.title}</a>
-            </p>
-        </div>
-        <div class="title_buttons flex">
-            
-        </div>
-    </div>
-</header>
+<Header banner={info.banner} title={info.title} {slug} />
 
 
 <!---------- Main ---------->
@@ -109,40 +94,44 @@
         <div class="info_column">
             <div class="info_content">
 
-                <div class="user_card flex">
+                <!-- Author card -->
+                <a class="user_card flex"
+                    href={`https://github.com/${info.author}`}
+                    target="_blank" rel="noreferrer"
+                >
                     <img src="https://avatars.githubusercontent.com/u/87151784?v=4" alt="">
                     <div>
-                        <a href={`https://github.com/${info.author}`} target="_blank" rel="noreferrer" class="emphasize bold">{info.author}</a>
-                        <p class="secondary_text">Author</p>
+                        <strong class="emphasize bold">{info.author}</strong><br/>
+                        <span class="secondary_text">Author</span>
                     </div>
+                </a>
+
+                <!-- Metadata -->
+                <div class="info_meta">
+                    <p>
+                        Posted<br />
+                        <span class="emphasize">{formatDate(info.created)}</span><br/>
+                    </p>
+                    <p>
+                        Last updated<br />
+                        <span class="emphasize">{formatDate(info.modified)}</span>
+                    </p>
                 </div>
-                
-                <br/>
 
-                <div class="emphasize">
-                    <p class="emphasize">
-                        Posted<br /><span>{formatDate(info.created)}</span><br/>
-                    </p>
-                    <p class="secondary_text">
-                        <i>
-                            Last updated<br />
-                            <span>{formatDate(info.modified)}</span>
-                        </i>
-                    </p>
-                    <br/>
-
-                    {#if info.contents}
-                        <nav class="table_of_contents" aria-label="Contents">
-                            <b>Table of contents</b>
-                            <hr>
-                            <!-- <a href="#article"><p>Article Tag</p></a> -->
-                            <!-- <a href="#another_article"><p>Another Article</p></a> -->
+                <!-- Table of contents -->
+                {#if info.contents}
+                    <nav class="table_of_contents" aria-label="Contents">
+                        <strong>Contents</strong><br />
+                        <ul>
                             {#each JSON.parse(info.contents) as item}
-                                <a href="#another_article"><p>Another Article</p></a>
+                                <li>
+                                    <a href={`#${item.id}`}><p>{item.name}</p></a>
+                                </li>
                             {/each}
-                        </nav>
-                    {/if}
-                </div>
+                        </ul>
+                    </nav>
+                {/if}
+
             </div>
         </div>
     {/if}

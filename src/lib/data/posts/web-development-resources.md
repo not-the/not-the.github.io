@@ -1,11 +1,11 @@
 ---
-title: Placeholder
-description: Description goes here
+title: Web Development Resources
+description: This is a list of websites, resources, and concepts to check out if you're getting started with web development.
 author: not-the
-banner: /assets/banner/gradient_2.png
+banner: /assets/banner/gradient_4.png
 
-created: 1970-01-01T05:00:00.000Z
-modified: 1970-01-01T05:00:00.000Z
+created: November 24, 2023
+modified: May 1, 2024
 ---
 
 <h2 id="get-started-with-web-development">Get Started With Web Development</h2>

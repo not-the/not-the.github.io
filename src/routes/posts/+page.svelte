@@ -85,7 +85,7 @@
     </div>
 
     <!-- sample.html -->
-    <div class="project" id="sample-html">
+    <!-- <div class="project" id="sample-html">
         <div class="title_section flex">
             <div>
                 <a href="/posts/sample.html" class="project_link"><div class="project_link_area"></div></a>
@@ -93,7 +93,7 @@
                 <p class="secondary_text">not-the | 1/1/1970</p>
             </div>
         </div>
-    </div>
+    </div> -->
 </main>
 
 
