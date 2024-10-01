@@ -2,7 +2,7 @@
 title: PIXI.JS Mario Changelog
 description: Update history for PIXI.JS Mario
 author: not-the
-banner: /assets/banner/gradient_3.png
+banner: url('/assets/banner/gradient_3.png')
 
 created: 6/17/2023
 modified: 7/5/2023

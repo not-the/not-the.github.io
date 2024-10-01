@@ -3,6 +3,7 @@
     // Components
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
+    import Header from '$lib/components/Header.svelte'
 </script>
 
 
@@ -26,15 +27,7 @@
 <Navbar />
 
 <!-- Header -->
-<header>
-    <!-- Banner image -->
-    <div id="banner" class="banner"></div>
-
-    <!-- Title -->
-    <div class="title_section container">
-        <h1>Page not found (404)</h1>
-    </div>
-</header>
+<Header banner={"unset"} title="Page not found (404)" path={false} />
 
 <!---------- Footer ---------->
 <Footer />

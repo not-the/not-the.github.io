@@ -2,7 +2,9 @@
 title: Carrot Clicker Changelog
 description: Description goes here
 author: not-the
-banner: /assets/banner/gradient_2.png
+banner: url('/assets/banner/gradient_2.png')
+
+buttons: [{"name":"Older changes","href":"https://carrot.notkal.com/changelog.txt","external":true}]
 
 created: 1970-01-01T05:00:00.000Z
 modified: 1970-01-01T05:00:00.000Z

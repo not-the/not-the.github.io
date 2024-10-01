@@ -2,6 +2,7 @@
 <script>
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
+    import Header from '$lib/components/Header.svelte'
 </script>
 
 
@@ -34,23 +35,7 @@
 <Navbar activeTab="Blog" />
 
 <!-- Header -->
-<header>
-    <!-- Banner image -->
-    <div id="banner" class="banner" style="background-image: linear-gradient(135deg, rgb(37, 26, 54) 0%, rgb(14, 24, 70) 100%)"></div>
-
-    <!-- Title -->
-    <div class="title_section container flex">
-        <div>
-            <h1>All Posts</h1>
-            <p id="path" class="secondary_text gray">
-                <a href="/">notkal</a> / <a href="/posts">Posts</a>
-            </p>
-        </div>
-        <div class="title_buttons flex">
-            
-        </div>
-    </div>
-</header>
+<Header banner="linear-gradient(135deg, rgb(37, 26, 54) 0%, rgb(14, 24, 70) 100%)" title="Blog" path="Posts" />
 
 
 <!---------- Main ---------->

@@ -2,7 +2,7 @@
 title: Web Development Resources
 description: This is a list of websites, resources, and concepts to check out if you're getting started with web development.
 author: not-the
-banner: /assets/banner/gradient_4.png
+banner: url('/assets/banner/gradient_4.png')
 
 created: November 24, 2023
 modified: May 1, 2024
@@ -48,7 +48,7 @@ modified: May 1, 2024
     <li><a href="https://webaim.org/resources/contrastchecker/">Contrast Checker</a></li>
     <li><a href="https://cubic-bezier.com/">cubic-bezier</a> - An easy, visual way to create cubic-bezier curves for CSS
         animations &amp; transitions.</li>
-    <li><a href="CSSGradient.io">https://cssgradient.io/</a></li>
+    <li><a href="https://cssgradient.io/">CSSGradient.io</a></li>
 </ul>
 
 <h2 id="code-editing-software">Code Editing Software</h2>

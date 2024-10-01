@@ -1,7 +1,9 @@
 ---
 title: About
-banner: /assets/banner/Crossroads 1.png
+banner: url('/assets/banner/Crossroads 1.png')
 description: About notkal.com, copyright information, & privacy policy
+
+path: About
 hide_info: true
 ---
 

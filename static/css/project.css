@@ -30,6 +30,10 @@ header .title_section {
     text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
     justify-content: space-between;
 }
+header .title_section .blog_title_container {
+    height: 51px;
+    position: relative;
+}
 header .title_section h1 {
     color: white;
     font-size: 32pt;
@@ -39,10 +43,6 @@ header .title_section h1 {
 }
 .title_left {
     width: 100%;
-}
-header .title_section .blog_title_container {
-    height: 51px;
-    position: relative;
 }
 header .title_section #path { margin-left: 3px; }
 header .title_section #path a { color: rgb(190, 190, 190); }
@@ -196,5 +196,11 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
     }
     .info_meta {
         text-align: center;
+    }
+    .body_column {
+        border-radius: 0;
+        border: none;
+        /* border-top: 1px solid var(--border-darker); */
+        padding: 6px;
     }
 }

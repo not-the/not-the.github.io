@@ -963,12 +963,11 @@ nav .button_icon {
 
 /* Projects - both item and page */
 .project > .inner { justify-content: space-between; }
-.title_buttons { margin-top: auto; }
+.title_buttons { margin-top: auto; display: flex; gap: 6px; }
 .title_buttons a { position: relative; }
 .title_buttons .button {
     width: max-content;
     min-width: 160px;
-    margin-left: 6px;
 }
 
 /* Projects/Posts */
