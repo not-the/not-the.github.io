@@ -738,13 +738,12 @@ a.nav_item:focus-visible + .drop_content,
 .page_title {
     font-size: 11pt;
     font-weight: 800;
-    font-family: var(--body-font);
-    
-    padding-left: 28px;
-    padding-right: 24px;
-    margin-right: 6px;
-    border-bottom: none;
-    border-right: 1px solid var(--border-color);
+    font-family: var(--title-font);
+
+    padding: 4px 24px 0 28px;
+    margin: 4px 6px 6px 0;
+
+    border-right: 2px solid var(--border-color);
     position: relative;
 }
 /* .page_title::after {
