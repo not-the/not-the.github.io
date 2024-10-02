@@ -35,7 +35,7 @@
 <Navbar activeTab="Projects" />
 
 <!-- Header -->
-<Header banner="linear-gradient(135deg, rgb(37, 26, 54) 0%, rgb(14, 24, 70) 100%)" title="Projects" path="Projects" />
+<Header banner="linear-gradient(90deg, rgba(75,50,32,1) 0%, rgba(76,30,50,1) 100%)" title="Projects" path="Projects" />
 
 <!-- <div class="title_buttons flex">
     <select name="project_filter" id="project_filter">

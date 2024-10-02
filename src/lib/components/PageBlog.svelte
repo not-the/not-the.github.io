@@ -79,7 +79,7 @@
 <Navbar {activeTab} />
 
 <!-- Header -->
-<Header banner={info.banner} title={info.title} buttons={info.buttons} path={info.path} {slug} />
+<Header banner={info.banner} title={info.title} buttons={info.buttons} path={info.path} {slug} header_theme={info.header_theme} />
 
 
 <!---------- Main ---------->

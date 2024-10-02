@@ -1,6 +1,6 @@
 <!-- JS -->
 <script>
-    export let banner, title, buttons, slug, path;
+    export let banner, header_theme, title, buttons, slug, path;
 
     let buttonArr = JSON.parse(buttons ?? "false");
 
@@ -11,11 +11,13 @@
                 return `<a href="${crumb.toLowerCase()}">${crumb}</a>`;
             })
             .join(' / ');
+
+    const isThemeLight = header_theme === 'light';
 </script>
 
 
 <!-- HTML -->
-<header>
+<header class={isThemeLight ? "light_header" : ""}>
     <!-- Banner image -->
     <div id="banner" class="banner" style={`background-image: ${banner}`}></div>
 
@@ -53,3 +55,6 @@
         {/if}
     </div>
 </header>
+
+<!-- Big background -->
+<div id="bg_image" style={`--img: ${banner}`} />

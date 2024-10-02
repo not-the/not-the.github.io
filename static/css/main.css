@@ -687,6 +687,26 @@ section:target h2 {
     position: relative;
 }
 
+/* BG */
+#bg_image {
+    background-image:
+        radial-gradient(closest-side, color-mix(in srgb, var(--main-bg) 60%, transparent) 0%, var(--main-bg) 100%),
+        var(--img);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    overflow: hidden;
+
+    filter: blur(64px);
+    /* transform: scale(1.1); */
+}
+
 /* Navigation */
 #nav {
     width: 100%;
