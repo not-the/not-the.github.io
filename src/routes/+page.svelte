@@ -115,14 +115,21 @@
     <noscript id="noscript" class="flex">
         <img src="/assets/image/js.png" alt="" height="60" width="60" style="margin-right: 18px;">
         <div>
-            This website will load without javascript enabled, but some features will not work as expected.
+            <p>
+                <strong>Javascript is turned off</strong>
+            </p>
+            <p>
+                This website will load without Javascript enabled, but some features will not work as expected.
+            </p>
         </div>
 
         <!-- CSS -->
         <style type="text/css">
             #reduce_motion,
-            #search_button {
-                filter: brightness(50%);
+            #search_button,
+            #options_button {
+                /* filter: brightness(50%); */
+                opacity: 0.6;
                 cursor: unset;
             }
             #theme_button:hover .button_icon { transform: none; }
@@ -131,13 +138,14 @@
                 left: 24px;
                 bottom: 36px;
 
-                width: 400px;
+                width: 450px;
                 max-width: 100%;
                 padding: 12px 18px;
                 border-radius: 12px;
 
-                background-color: var(--text);
+                background-color: var(--day-transparent-bg);
                 color: var(--main-bg);
+                border: 1px solid var(--day-border-color);
             }
 
             /* AOS */

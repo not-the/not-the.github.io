@@ -47,9 +47,9 @@ header .title_section h1 {
 .title_left {
     width: 100%;
 }
-header .title_section #path { margin-left: 3px; }
-header .title_section #path a { color: rgb(190, 190, 190); }
-header .title_section #path a:hover { color: white; }
+header .title_section #path { margin-left: 3px; margin-top: 3px; }
+header .title_section #path a { color: var(--night-placeholder-text); }
+header .title_section #path a:hover { color: white; } 
 
 /* Main */
 #main {
