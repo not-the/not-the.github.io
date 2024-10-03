@@ -18,7 +18,6 @@ const config = {
 
         // Prerender config
         prerender: {
-            default: true,
             handleHttpError: 'warn'
         }
 	}
