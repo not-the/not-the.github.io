@@ -61,7 +61,7 @@
             "id": "puzzle-cube",
     
             "hero": "/assets/project/rubiks2.png",
-            "hero_position": "right !important",
+            "hero_position": "right",
     
             "url": "https://rubiks.notkal.com/",
             "about": "/projects/rubiks-cube"
