@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-auto';
-// import adapter from '@sveltejs/adapter-static';
+// import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -13,8 +13,17 @@ const config = {
 			assets: 'build',
 			fallback: '404.html',
 			precompress: false,
-			strict: true
-		})
+			strict: true,
+
+            export: {
+                format: 'directory'
+            }
+		}),
+
+        // Prerender config
+        prerender: {
+            handleHttpError: 'warn'
+        }
 	}
 };
 

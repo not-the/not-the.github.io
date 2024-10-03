@@ -3,7 +3,7 @@
 
     const backgroundStyle = data.hero ?
         `background: var(--project-gradient), url('${data.hero}');
-        ${data?.hero_position ? `background-position: ${data?.hero_position ?? "center"} !important` : ""}}`
+        ${data?.hero_position ? `background-position: ${data?.hero_position ?? "center"} !important` : ""}`
         : null;
 
     const classes = `project ${style??""}`;
