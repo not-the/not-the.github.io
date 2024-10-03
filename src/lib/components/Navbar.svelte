@@ -25,7 +25,7 @@
         }
     ];
 
-
+    /** Returns a boolean depending on if the current page matches a given nav button */
     function isActiveNav(href="") {
         if(href === activeTab) return true;
     }

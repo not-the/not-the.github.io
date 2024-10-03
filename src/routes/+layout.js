@@ -2,4 +2,5 @@
 // import './global.css'
 
 // Prerender
-export const prerender = true;
+// export const prerender = true;
+export const csr = false;
