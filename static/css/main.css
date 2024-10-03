@@ -1540,8 +1540,12 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     a.nav_item {
         --active-border-width: 6px;
 
-        padding: 6px 21px 6px 15px;
+        padding: 9px 21px 9px 15px;
         text-align: left;
+    }
+    a.nav_item:hover,
+    a.nav_item:focus-visible {
+        border-color: transparent;
     }
     a.nav_item[data-active] {
         border-bottom: unset;
