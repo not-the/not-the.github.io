@@ -82,7 +82,9 @@ header .title_section #path a:hover { color: white; }
     gap: 12px;
 }
 .info_content > *:first-child {
-    background-color: var(--main-bg);
+    background-color: var(--transparent-bg);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
     border: 1px solid var(--border-darker);
     border-radius: 12px;
 }
@@ -107,7 +109,10 @@ header .title_section #path a:hover { color: white; }
     padding: 6px 12px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    column-gap: 12px;
+    gap: 12px;
+}
+.info_meta p {
+    margin: 0 !important;
 }
 #box_art {
     background-color: var(--lighter-bg);
@@ -174,6 +179,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
 }
 .table_of_contents > ul > li > ul > li {
     padding: 0;
+    margin-left: 21px;
 }
 .table_of_contents a {
     color: var(--secondary-color);

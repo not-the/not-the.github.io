@@ -3,11 +3,15 @@ title: About
 banner: url('/assets/banner/Crossroads 1.png')
 description: About notkal.com, copyright information, & privacy policy
 
+author: not-the
+
 path: About
-hide_info: true
+# hide_info: true
+
+contents: [{"name":"Contact","id":"contact"},{"name":"Privacy Policy & Cookies","id":"privacy","children":[{"name":"Third-party Cookies","id":"third_party_cookies"}]},{"name":"Copyright & Attribution","id":"copyright"}]
 ---
 
-<h2>Contact</h2>
+<h2 id="contact">Contact</h2>
 <p>
     I can be reached at: <a role="button" tabindex="0" data-obfuscated>(Click to reveal)</a><br/>
     Additional contact information is available <a href="/#contact">here</a>
@@ -24,7 +28,7 @@ hide_info: true
     notkal.com uses cookies (localStorage) to provide basic client-side functionality. None of this data is sent or retained server-side. For all notkal.com subdomains without their own unique privacy policy, the same privacy & cookie policy also applies there. A description of third-party cookie usage & privacy is available below.
 </p>
 
-<h3>Third-party Cookies</h3>
+<h3 id="third_party_cookies">Third-party Cookies</h3>
 <p>
     Third parties, such as Google, use browser cookies to serve interest-based ads on notkal.com and its subdomains. Google's use of advertising cookies enables them and their partners to serve ads based on your visits to this site and other sites on the internet.
 </p>

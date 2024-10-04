@@ -90,33 +90,40 @@
     </div>
 
     <!-- Sidebar -->
-    {#if !info.hide_info}
-        <div class="info_column">
+    <div class="info_column">
+        {#if !info.hide_info}
             <div class="info_content">
 
                 <!-- Author card -->
-                <a class="user_card flex"
-                    href={`https://github.com/${info.author}`}
-                    target="_blank" rel="noreferrer"
-                >
-                    <img src="https://avatars.githubusercontent.com/u/87151784?v=4" alt="">
-                    <div>
-                        <strong class="emphasize bold">{info.author}</strong><br/>
-                        <span class="secondary_text">Author</span>
-                    </div>
-                </a>
+                {#if info.author}
+                    <a class="user_card flex"
+                        href={`https://github.com/${info.author}`}
+                        target="_blank" rel="noreferrer"
+                    >
+                        <img src="https://avatars.githubusercontent.com/u/87151784?v=4" alt="">
+                        <div>
+                            <strong class="emphasize bold">{info.author}</strong><br/>
+                            <span class="secondary_text">Author</span>
+                        </div>
+                    </a>
+                {/if}
 
                 <!-- Metadata -->
-                <div class="info_meta">
-                    <p>
-                        Posted<br />
-                        <span class="emphasize">{formatDate(info.created)}</span><br/>
-                    </p>
-                    <p>
-                        Last updated<br />
-                        <span class="emphasize">{formatDate(info.modified)}</span>
-                    </p>
-                </div>
+                {#if info.created}
+                    <div class="info_meta">
+                        <p>
+                            Posted<br />
+                            <span class="emphasize">{formatDate(info.created)}</span><br/>
+                        </p>
+
+                        {#if info.modified}
+                            <p>
+                                Last updated<br />
+                                <span class="emphasize">{formatDate(info.modified)}</span>
+                            </p>
+                        {/if}
+                    </div>
+                {/if}
 
                 <!-- Table of contents -->
                 {#if info.contents}
@@ -144,8 +151,8 @@
                 {/if}
 
             </div>
-        </div>
-    {/if}
+        {/if}
+    </div>
 </main>
 
 <!-- Footer -->

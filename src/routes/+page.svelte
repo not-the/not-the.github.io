@@ -78,7 +78,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Home Page JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
     <script src="/js/obfuscate.js" defer></script>
 
 </svelte:head>
@@ -115,7 +115,7 @@
 
     <!-- noscript -->
     <noscript id="noscript" class="flex">
-        <img src="/assets/image/js.png" alt="" height="60" width="60" style="margin-right: 18px;">
+        <img src="/assets/image/js.png" alt="Javascript Logo" height="60" width="60" style="margin-right: 18px;">
         <div>
             <p>
                 <strong>Javascript is turned off</strong>
@@ -211,7 +211,7 @@
                     <textarea placeholder="Message..." name="message" rows="6" required bind:value={contactFormMessage}></textarea>
 
                     <br/><br/>
-                    <button type="submit" class="button button_blue bold full_width" disabled={!contactFormFilled}>
+                    <button type="submit" class="button button_blue bold full_width">
                         <p>Send</p>
                         <div class="button_shade"></div>
                     </button>
