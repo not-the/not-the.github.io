@@ -38,9 +38,15 @@
 
 
     {
+        "name": "NOT UNO",
+        "icon": "https://uno.notkal.com/favicon/Favicon192x.png",
+        "url": "https://uno.notkal.com",
+        "type": "url"
+    },
+    {
         "name": "Sand Toy",
         "icon": "https://notkal.com/sand-toy/artwork/materials/sand.png",
-        "url": "https://notkal.com/sand-toy/",
+        "url": "https://sandtoy.notkal.com",
         "type": "url"
     },
     {

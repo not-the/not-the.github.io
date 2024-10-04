@@ -13,7 +13,7 @@
     // import data from "$lib/data/data.json"
 
 
-    // Contact form
+    // Contact form (UNUSED WHILE STATIC ADAPTER IS ENABLED)
     let contactFormEmail = '';
     let contactFormMessage = '';
 
@@ -177,6 +177,7 @@
 
 
 <!---------- Projects ---------->
+<br/>
 <br/>
 <br/>
 <section id="projects" class="container">
