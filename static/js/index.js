@@ -354,6 +354,9 @@ function palette(close) {
             block:"nearest",
             behavior:"smooth"
         });
+
+        // Preventdefault
+        if(event.key === 'ArrowDown' || event.key === 'ArrowUp') event.preventDefault();
     })
     // search();
 
