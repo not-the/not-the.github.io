@@ -640,6 +640,8 @@ summary { cursor: pointer; }
 .center { text-align: center; }
 .gray { color: gray; }
 .emphasize { color: var(--text) !important;}
+.hover_emphasize:hover,
+.hover_emphasize:focus-visible { color: var(--text) !important;}
 .accent_color { color: var(--accent-color); }
 .full_width { width: 100%; }
 .full_height { height: 100%; }
@@ -1082,7 +1084,7 @@ nav .button_icon {
     color: var(--secondary-text);
 
     background-color: var(--main-bg);
-    padding: 12px 0 16px;
+    padding: 18px 0 24px;
     margin-top: 24px;
     border-top: 1px solid var(--border-color);
 }
@@ -1096,6 +1098,20 @@ nav .button_icon {
 /* #footer .column:first-of-type { margin-right: 16px; } */
 #footer > .container { z-index: 1; }
 
+/* Cols */
+.footer_columns_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+#footer ul {
+    list-style: none;
+    padding-top: 3px;
+}
+#footer li {
+    padding: 2px 0;
+}
+
 #footer #easter_egg {
     opacity: 0;
     cursor: pointer;
@@ -1105,12 +1121,12 @@ nav .button_icon {
     background-color: transparent; backdrop-filter: none;
 }
 #footer #easter_egg:focus-visible { opacity: 1;  }
-#footer .icons { margin-bottom: 12px; display: flex; align-items: center; }
+#footer .icons { margin-bottom: 18px; display: flex; align-items: center; }
 #footer .ee_icon {
     display: inline-block;
-    margin-right: 12px;
+    margin-right: 9px;
 
-    width: 28px;
+    min-width: 28px;
     height: 28px;
     border-radius: 50%;
     background: radial-gradient(circle at 15% 15%, var(--gradient-a) 0%, var(--gradient-b) 90%);
@@ -1123,13 +1139,19 @@ nav .button_icon {
     opacity: 0.75;
 }
 
+.footer_breadcrumbs .breadcrumb_separator {
+    color: var(--placeholder-text);
+    padding: 0 3px;
+}
+
 
 /* Overlays */
 #backdrop {
     position: fixed;
     top:0; right:0; bottom:0; left:0;
-    background-color: var(--backdrop-color);
     z-index: 9;
+
+    background-color: var(--backdrop-color);
     visibility: hidden;
 }
 .visible { visibility: visible !important; }
@@ -1326,7 +1348,7 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
     z-index: 101;
 
     background-color: var(--backdrop-color);
-    /* backdrop-filter: blur(12px); */
+    /* backdrop-filter: blur(3px); */
     padding: 12px;
 
     display: flex;

@@ -26,6 +26,9 @@
     <!-- <meta name="twitter:image:alt" content="Alt text for image"> -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="og:site_name" content="notkal">
+
+    <!-- AOS -->
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
 </svelte:head>
 
 
@@ -35,7 +38,7 @@
 <Navbar activeTab="Portfolio" />
 
 <!-- Header -->
-<Header title="Projects" path="Projects" />
+<Header title="Portfolio" path="Portfolio" />
 
 <!-- <div class="title_buttons flex">
     <select name="project_filter" id="project_filter">
@@ -47,7 +50,7 @@
 
 <!---------- Main ---------->
 <main class="container">
-    <AllProjects />
+    <!-- <AllProjects /> -->
 </main>
 
 

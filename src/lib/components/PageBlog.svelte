@@ -156,4 +156,4 @@
 </main>
 
 <!-- Footer -->
-<Footer />
+<Footer title={info.title} />
