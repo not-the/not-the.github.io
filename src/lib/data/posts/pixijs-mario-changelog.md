@@ -7,6 +7,9 @@ banner: url('/assets/banner/gradient_3.png')
 created: 6/17/2023
 modified: 7/5/2023
 
+id: pixijs-mario-changelog
+tags: gamedev, changelog
+
 contents: [{"name":"Update v0.18","id":"update_v0_18"},{"name":"Update v0.17","id":"update_v0_17"},{"name":"Update v0.16","id":"update_v0_16"},{"name":"Update v0.15","id":"update_v0_15"},{"name":"Update v0.14","id":"update_v0_14"},{"name":"Update v0.13","id":"update_v0_13"},{"name":"Update v0.12","id":"update_v0_12"},{"name":"Update v0.11","id":"update_v0_11"},{"name":"Update v0.10","id":"update_v0_10"},{"name":"Update v0.9","id":"update_v0_9"},{"name":"Update v0.8","id":"update_v0_8"},{"name":"Update v0.7","id":"update_v0_7"},{"name":"Update v0.6","id":"update_v0_6"},{"name":"Update v0.5","id":"update_v0_5"},{"name":"Update v0.4","id":"update_v0_4"},{"name":"Update v0.3","id":"update_v0_3"},{"name":"Update v0.2","id":"update_v0_2"},{"name":"Update v0.1","id":"update_v0_1"}]
 ---
 

@@ -61,7 +61,7 @@ header .title_section #path a:hover { color: white; }
     /* padding: 24px; */
     margin-bottom: 24px;
     /* background-color: var(--main-bg);
-    border: 1px solid var(--border-darker);
+    border: 1px solid var(--border-transparent);
     border-radius: 12px; */
 }
 /* Info */
@@ -85,7 +85,7 @@ header .title_section #path a:hover { color: white; }
     background-color: var(--transparent-bg);
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
-    border: 1px solid var(--border-darker);
+    border: 1px solid var(--border-transparent);
     border-radius: 12px;
 }
 .user_card {
@@ -128,7 +128,8 @@ header .title_section #path a:hover { color: white; }
     width: 100%;
     padding: 24px 28px;
     background-color: var(--main-bg);
-    border: 1px solid var(--border-darker);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-transparent);
     border-radius: 12px;
 }
 iframe {
@@ -217,7 +218,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
     .body_column {
         /* border-radius: 0; */
         border: none;
-        /* border-top: 1px solid var(--border-darker); */
+        /* border-top: 1px solid var(--border-transparent); */
         padding: 12px 12px;
     }
 }

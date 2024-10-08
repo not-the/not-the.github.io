@@ -2,10 +2,12 @@
 title: sample.html
 description: Description goes here
 author: not-the
-banner: url('/assets/banner/gradient_2.png')
+banner: url('https://media.idownloadblog.com/wp-content/uploads/2021/09/Apple-September-Event-California-Streaming-BasicAppleGuy-iDownloadBlog-6K-No-Logo-2048x1206.png')
 
 created: 1970-01-01T05:00:00.000Z
 modified: 1970-01-01T05:00:00.000Z
+
+id: sample
 ---
 ## Header 2
 ### Header 3

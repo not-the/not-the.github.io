@@ -1,55 +1,18 @@
 <!-- JS -->
 <script>
-    import { marked } from 'marked'
-
     // Components
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
     import Header from '$lib/components/Header.svelte'
 
+    // Functions
+    import { mdToFormatted, formatDate } from '$lib/functions.js'
+
     // Props
     export let file, slug, activeTab;
 
-
-    const newLineRegex = /\r?\n/;
-    const headerRowNewLineRegex = /---\s*\r?\n/;
-
-    // Remove data section from document
-    /** MD body with metadata removed */
-    const bodyRaw = file.split(headerRowNewLineRegex)[2];
-    /** Body parsed to HTML */
-    const body = marked(bodyRaw);
-
-    // Table of contents
-    // const tableOfContents = bodyRaw.split(newLineRegex).filter(line => line.startsWith("#"));
-    // console.log(tableOfContents);
-
-    // Info
-    let info = file
-        .split(headerRowNewLineRegex)[1] // Get data section
-        .split(newLineRegex) // Split at new lines
-        .filter(e => e !== "" && e !== "---") // Remove empty lines
-        .map(e => { // Turn into object entry arrays & make keys lowercase
-            let value = e.split(": ");
-            value[0] = value[0].toLowerCase();
-            return value;
-        });
-    info = Object.fromEntries(info);
-
-    // console.log(info);
-
-
-    // Format date
-    function formatDate(value) {
-        // Convert to date object if needed
-        const date = typeof value === 'object' ? value : new Date(value);
-        
-        return date.toLocaleDateString('en-US',  {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    }
+    // Get post info
+    let { info, body } = mdToFormatted(file);
 </script>
 
 

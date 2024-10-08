@@ -6,6 +6,7 @@ description: About notkal.com, copyright information, & privacy policy
 author: not-the
 
 path: About
+id: web-development-resources
 # hide_info: true
 
 contents: [{"name":"Contact","id":"contact"},{"name":"Privacy Policy & Cookies","id":"privacy","children":[{"name":"Third-party Cookies","id":"third_party_cookies"}]},{"name":"Copyright & Attribution","id":"copyright"}]

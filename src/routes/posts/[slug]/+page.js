@@ -1,8 +1,9 @@
-export async function load({ params }) {
+import { fetchMarkdownFile } from '$lib/functions.js'
 
+export async function load({ params }) {
     // Blog post
     const slug = params.slug;
-    const file = (await import(`$lib/data/posts/${slug}.md?raw`)).default;
+    const file = await fetchMarkdownFile(slug)
 
     // Return parsed data
     return { file, slug }

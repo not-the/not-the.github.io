@@ -3,6 +3,23 @@
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
     import Header from '$lib/components/Header.svelte'
+    import CardBlog from '$lib/components/CardBlog.svelte'
+
+    // Functions
+    import { mdToFormatted } from '$lib/functions.js'
+
+    // Posts (temporary solution)
+    import p0 from '$lib/data/posts/carrot-clicker-changelog.md?raw'
+    import p1 from '$lib/data/posts/pixijs-mario-changelog.md?raw'
+    import p2 from '$lib/data/posts/web-development-resources.md?raw'
+    // import p3 from '$lib/data/posts/sample.md?raw'
+
+    const posts = [
+        mdToFormatted(p0),
+        mdToFormatted(p1),
+        mdToFormatted(p2),
+        // mdToFormatted(p3),
+    ].reverse();
 </script>
 
 
@@ -39,46 +56,10 @@
 
 
 <!---------- Main ---------->
-<main class="container">
-    <div class="project" id="web-development-resources">
-        <div class="title_section flex">
-            <div>
-                <a href="/posts/web-development-resources/" class="project_link"><div class="project_link_area"></div></a>
-                <h3>Web Development Resources</h3>
-                <p class="secondary_text">not-the | November 24, 2023</p>
-            </div>
-        </div>
-    </div>
-    <div class="project" id="pixijs-mario-changelog">
-        <div class="title_section flex">
-            <div>
-                <a href="/posts/pixijs-mario-changelog/" class="project_link"><div class="project_link_area"></div></a>
-                <h3>PIXI.JS Mario Changelog</h3>
-                <p class="secondary_text">not-the | June 17, 2023</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="project" id="carrot-clicker-changelog">
-        <div class="title_section flex">
-            <div>
-                <a href="/posts/carrot-clicker-changelog/" class="project_link"><div class="project_link_area"></div></a>
-                <h3>Carrot Clicker Changelog</h3>
-                <p class="secondary_text">not-the | August 22, 2022</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- sample.html -->
-    <!-- <div class="project" id="sample-html">
-        <div class="title_section flex">
-            <div>
-                <a href="/posts/sample.html" class="project_link"><div class="project_link_area"></div></a>
-                <h3>sample.html</h3>
-                <p class="secondary_text">not-the | 1/1/1970</p>
-            </div>
-        </div>
-    </div> -->
+<main class="container cards_container">
+    {#each posts as { info, body }}
+        <CardBlog postID={info.id} {info} {body} />
+    {/each}
 </main>
 
 

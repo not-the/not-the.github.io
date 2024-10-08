@@ -7,6 +7,9 @@ banner: url('/assets/banner/gradient_4.png')
 created: November 24, 2023
 modified: May 1, 2024
 
+id: web-development-resources
+tags: webdev
+
 contents: [{"name":"Get Started With Web Development","id":"get-started-with-web-development","children":[{"name":"Documentation","id":"documentation"},{"name":"Tutorials (Start Here)","id":"tutorials-start-here"},{"name":"CSS Learning Resources","id":"css-learning-resources"},{"name":"Additional Resources","id":"additional-resources"}]},{"name":"Code Editing Software","id":"code-editing-software"},{"name":"Concepts","id":"concepts","children":[{"name":"CSS Concepts","id":"css-concepts"},{"name":"Accessibility","id":"accessibility"},{"name":"Advanced concepts","id":"advanced-concepts"}]}]
 ---
 

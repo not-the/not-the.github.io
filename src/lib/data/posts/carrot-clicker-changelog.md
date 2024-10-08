@@ -1,13 +1,16 @@
 ---
 title: Carrot Clicker Changelog
-description: Description goes here
+description: Update history for Carrot Clicker
 author: not-the
 banner: url('/assets/banner/gradient_2.png')
 
 buttons: [{"name":"Older changes","href":"https://carrot.notkal.com/changelog.txt","external":true}]
 
-created: 1970-01-01T05:00:00.000Z
-modified: 1970-01-01T05:00:00.000Z
+created: 6/17/2023
+modified: 7/5/2023
+
+id: carrot-clicker-changelog
+tags: gamedev, changelog
 
 contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1.17.4","id":"dev-beta-1_17_4"},{"name":"Dev beta 1.17.2 Revision 2","id":"dev-beta-1_17_2-revision-2"},{"name":"Dev beta 1.17.2 Revision 1","id":"dev-beta-1_17_2-revision-1"},{"name":"Dev beta 1.17.3","id":"dev-beta-1_17_3"},{"name":"Stable Repository","id":"stable-repository"},{"name":"Dev beta 1.17.2","id":"dev-beta-1_17_2"},{"name":"Dev beta 1.17.1","id":"dev-beta-1_17_1"},{"name":"Dev beta 1.17","id":"dev-beta-1_17"},{"name":"Dev beta 1.16.16","id":"dev-beta-1_16_16"},{"name":"Dev beta 1.16.15.1","id":"dev-beta-1_16_15_1"},{"name":"Dev beta 1.16.15","id":"dev-beta-1_16_15"},{"name":"Dev beta 1.16.14","id":"dev-beta-1_16_14"},{"name":"Dev beta 1.16.13","id":"dev-beta-1_16_13"},{"name":"Dev beta 1.16.12","id":"dev-beta-1_16_12"},{"name":"Dev beta 1.16.11","id":"dev-beta-1_16_11"},{"name":"Dev beta 1.16.10","id":"dev-beta-1_16_10"},{"name":"Dev beta 1.16.9.1","id":"dev-beta-1_16_9_1"},{"name":"Dev beta 1.16.9","id":"dev-beta-1_16_9"},{"name":"Dev beta 1.16.8","id":"dev-beta-1_16_8"}]
 ---

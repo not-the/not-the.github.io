@@ -59,7 +59,7 @@ body.theme_light .mouse_glow {
     padding: 20px;
 
     background-color: var(--transparent-bg);
-    border: 1px solid var(--border-darker);
+    border: 1px solid var(--border-transparent);
     border-radius: 15px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -135,7 +135,7 @@ body.theme_light .mouse_glow {
     padding: 8px 16px;
     background-color: var(--transparent-bg);
     border-radius: 20px;
-    border: 1px solid var(--border-darker);
+    border: 1px solid var(--border-transparent);
 } */
 /* .wave_decoration {
     background-image: url(./assets/decoration/wave.png);
