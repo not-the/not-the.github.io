@@ -15,9 +15,6 @@ body.theme_light {
     --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
     --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.2);
 }
-body.theme_light .mouse_glow {
-    --glow-color: 81, 162, 255
-}
 
 /* Landing */
 #banner.video_main {
@@ -200,44 +197,6 @@ body.theme_light .mouse_glow {
     --border-color: var(--lighter-bg);
 }
 
-/* Hover glow */
-.mouse_glow {
-    position: relative;
-
-    --glow-color: 255, 255, 255;
-}
-.mouse_glow::after,
-.mouse_glow::before {
-    border-radius: inherit;
-    content: "";
-    height: 100%;
-    width: 100%;
-
-    position: absolute;
-    left: 0px;
-    top: 0px;
-
-    transition: opacity 0.2s ease;
-    opacity: 0;
-
-    background: radial-gradient(
-        720px circle at var(--mouse-x) var(--mouse-y),
-        rgba(var(--glow-color), 0.1),
-        transparent 40%
-    );
-    z-index: 1;
-}
-.mouse_glow::before {
-    background: radial-gradient(
-        560px circle at var(--mouse-x) var(--mouse-y),
-        rgba(var(--glow-color), 0.6),
-        transparent 40%
-    );
-    z-index: 0;
-}
-.mouse_glow::before, .mouse_glow:hover::after {
-    opacity: 1;
-}
 
 .skill img {
     height: 48px;

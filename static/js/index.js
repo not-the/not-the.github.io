@@ -584,3 +584,24 @@ try {
         root.style.setProperty('--gradient-b', e.srcElement.value);
     });
 } catch (error) { console.warn(error); }
+
+
+
+
+// Mouse highlight effect
+// Inspired by https://codepen.io/Hyperplexed/pen/MWQeYLW
+document.querySelectorAll("[data-mouse-highlight-area]").forEach(area => area.addEventListener("mousemove", event => {
+    requestAnimationFrame(() => {
+        for(const element of area.querySelectorAll("[data-mouse-highlight]")) {
+            const rect = element.getBoundingClientRect();
+            const posX = event.clientX - rect.left;
+            const posY = event.clientY - rect.top;
+
+            element.style.setProperty("--mouse-x", `${posX}px`);
+            element.style.setProperty("--mouse-y", `${posY}px`);
+
+            element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / -25}deg`);
+            element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / 10}deg`);
+        };
+    });
+}));

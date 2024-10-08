@@ -14,10 +14,11 @@
 </script>
 
 <!-- HTML -->
-<a href={`/posts/${postID}`} class="card" style={`--img: ${info.banner}`}>
-    <div class="hover_bg"></div>
-
+<a href={`/posts/${postID}`} class="card" style={`--img: ${info.banner}`} data-mouse-highlight>
     <div class="inner">
+        <!-- BG -->
+        <div class="hover_bg"></div>
+
         <!-- Title -->
         <div class="upper">
             <h3>{info.title}</h3>
