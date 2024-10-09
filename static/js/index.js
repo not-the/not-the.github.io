@@ -600,8 +600,8 @@ document.querySelectorAll("[data-mouse-highlight-area]").forEach(area => area.ad
             element.style.setProperty("--mouse-x", `${posX}px`);
             element.style.setProperty("--mouse-y", `${posY}px`);
 
-            element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / -25}deg`);
-            element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / 10}deg`);
+            element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / rect.width * 15}deg`);
+            element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -15}deg`);
         };
     });
 }));

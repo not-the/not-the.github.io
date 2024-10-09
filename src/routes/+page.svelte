@@ -1,11 +1,12 @@
 <!-- JS -->
 <script>
-    import { onMount } from 'svelte'
+    // import { onMount } from 'svelte'
 
     // Components
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
     import AllProjects from '$lib/components/AllProjects.svelte'
+    import CardProject from '$lib/components/CardProject.svelte'
 
     // import Project from '$lib/components/Project.svelte'
 
@@ -171,7 +172,7 @@
         </div>
     </div> -->
 
-    <!-- Wave SVG -->
+<!-- Wave SVG -->
     <!-- <div class="wave_decoration white_icon"></div> -->
 </main>
 
@@ -180,12 +181,24 @@
 <br/>
 <br/>
 <br/>
-<section id="projects" class="container">
+<section id="projects" class="container" style="--disabled-container-width: 1100px">
     <!-- Title -->
-    <h2>Projects</h2>
+    <!-- <h2>Projects</h2> -->
     
     <!-- List -->
-    <AllProjects />
+    <div class="cards_container" id="project_cards">
+        <CardProject projectID="not-uno" />
+        <CardProject projectID="sand-toy" />
+        <CardProject projectID="mario-pixijs" />
+        <CardProject projectID="character-creator" />
+        <CardProject projectID="carrot-clicker" />
+        <CardProject projectID="puzzle-cube" />
+        <CardProject projectID="gravity-toy" />
+        <CardProject projectID="maze-algorithm" />
+    </div>
+
+    <br/>
+    <CardProject projectID="all-projects" size="small" hoverEffects="none" />
 
 </section>
 

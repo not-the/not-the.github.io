@@ -1,78 +1,96 @@
 {
-    "projects": [
-        {
+    "projects": {
+        "project-title": {
             "hidden": true,
-            "name": "Project Title",
-            "id": "project-title",
+            "name": "Missing",
+            "id": "missing",
             "tagline": "Tagline",
     
-            "hero": "/assets/project/piximario.png",
-    
-            "url": "https://mario.notkal.com/",
+            "url": "notkal.com",
             "about": "/pixijs-mario"
         },
 
-        {
+        "all-projects": {
+            "hidden": true,
+
+            "name": "All projects ->",
+            "id": "all-projects",
+
+            "url": "/projects",
+            "card_url": false
+        },
+
+        "not-uno": {
             "name": "NOT UNO",
             "id": "not-uno",
+            "description": "Play UNO online with friends! Free with no ads",
     
+            "logo": "https://uno.notkal.com/LOGO@2x.png",
             "hero": "/assets/project/not_uno_banner_notext.png",
             "hero_position": "center",
     
-            "url": "https://uno.notkal.com/",
+            "url": "https://uno.notkal.com",
             "about": "/"
         },
-        {
+        "sand-toy": {
             "name": "Sand Toy",
             "id": "sand-toy",
+            "description": "Fun pixel world simulation in PIXI.JS, based on games like The Sandbox",
     
             "hero": "/assets/project/sandtoy scene.png",
+            "icon": "/assets/project/SandToyIcon.png",
     
-            "url": "https://sandtoy.notkal.com/",
+            "url": "https://sandtoy.notkal.com",
             "about": "/"
         },
-        {
+        "mario-pixijs": {
             "name": "PIXI.JS Mario",
             "id": "mario-pixijs",
     
             "hero": "/assets/project/piximario.png",
             "hero_position": "center 80%",
+            "icon": "https://mario.notkal.com/favicon.png",
     
-            "url": "https://mario.notkal.com/",
+            "url": "https://mario.notkal.com",
             "about": "/pixijs-mario"
         },
-        {
+        "character-creator": {
             "name": "Character Creator",
             "id": "character-creator",
+            "description": "Create your own Carrot Clicker character",
 
             "hero": "/assets/project/character_creator_2.png",
 
             "url": "https://notkal.com/Character-Creator"
         },
-        {
+        "carrot-clicker": {
             "name": "Carrot Clicker",
             "id": "carrot-clicker",
+            "description": "Carrot Clicker is an exponential growth clicker game where clicking is always incentivised.",
+
+            "logo": "/assets/project/Carrot Clicker logo-h.png",
             "hero": "/assets/project/carrot_clicker_big.png",
             "about": "/projects/carrot-clicker",
             "url": "https://carrot.notkal.com"
         },
-        {
+        "puzzle-cube": {
             "name": "Rubik's Cube",
             "id": "puzzle-cube",
     
             "hero": "/assets/project/rubiks2.png",
             "hero_position": "right",
     
-            "url": "https://rubiks.notkal.com/",
+            "url": "https://rubiks.notkal.com",
             "about": "/projects/rubiks-cube"
         },
-        {
+        "gravity-toy": {
             "name": "Gravity Toy",
             "id": "gravity-toy",
+            "description": "Fun physics simulation with balls",
 
             "url": "https://not-the.github.io/gravity-toy"
         },
-        {
+        "maze-algorithm": {
             "name": "Maze Algorithm",
             "id": "maze-algorithm",
             "hero": "/assets/project/maze.png",
@@ -80,10 +98,10 @@
             "url": "https://notkal.com/Maze-Algorithm",
             "about": "/projects/maze"
         }
-    ],
+    },
 
-    "projects_older": [
-        {
+    "projects_older": {
+        "pong": {
             "name": "Pong",
             "id": "pong",
             "hero": "/assets/project/pong.png",
@@ -91,7 +109,7 @@
             "url": "https://notkal.com/Pong",
             "about": "/projects/pong"
         },
-        {
+        "tictactoe": {
             "name": "Tic Tac Toe",
             "id": "tictactoe",
             "hero": "/assets/project/ttt.png",
@@ -99,7 +117,7 @@
             "url": "https://tictactoe.notkal.com",
             "about": "/projects/tic-tac-toe"
         },
-        {
+        "Mouse-Confetti": {
             "name": "HTML Confetti",
             "id": "Mouse-Confetti",
             "hero": "/assets/project/confetti.png",
@@ -107,40 +125,40 @@
             "url": "https://notkal.com/Mouse-Confetti",
             "about": "/projects/html-confetti"
         },
-        {
+        "loading-screens": {
             "name": "CSS Loading Screens",
             "id": "loading-screens",
 
             "url": "https://not-the.github.io/Loading-Screens",
             "about": "/projects/css-loading-screens"
         },
-        {
+        "iss-tracker-app": {
             "name": "ISS Tracker",
             "id": "iss-tracker-app",
 
             "url": "https://notkal.com/iss-tracker-app/",
             "about": "/projects/iss-tracker"
         },
-        {
+        "geolocation-html": {
             "name": "Geolocation",
             "id": "geolocation-html",
 
             "url": "https://not-the.github.io/geolocation-html",
             "about": "/projects/geolocation"
         },
-        {
+        "js-pyramid": {
             "name": "JS Pyramid",
             "id": "js-pyramid",
 
             "url": "https://not-the.github.io/js-pyramid",
             "about": "/projects/js-pyramid"
         },
-        {
+        "leap-years-list": {
             "name": "Leap years list",
             "id": "leap-years-list",
 
             "url": "https://not-the.github.io/LeapYear",
             "about": "/projects/leap-years-list"
         }
-    ]
+    }
 }
