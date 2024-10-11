@@ -37,7 +37,8 @@
             "id": "sand-toy",
             "description": "Fun pixel world simulation in PIXI.JS, based on games like The Sandbox",
     
-            "hero": "/assets/project/sandtoy scene.png",
+            "hero": "/assets/project/sandtoy%20scene.png",
+            "hero_position": "center right",
             "icon": "/assets/project/SandToyIcon.png",
     
             "url": "https://sandtoy.notkal.com",
@@ -66,7 +67,7 @@
         "carrot-clicker": {
             "name": "Carrot Clicker",
             "id": "carrot-clicker",
-            "description": "Carrot Clicker is an exponential growth clicker game where clicking is always incentivised.",
+            "description": "Carrot Clicker is an idle clicker game about farming exponentially increasing amounts of carrots.",
 
             "logo": "/assets/project/Carrot Clicker logo-h.png",
             "hero": "/assets/project/carrot_clicker_big.png",
@@ -86,7 +87,7 @@
         "gravity-toy": {
             "name": "Gravity Toy",
             "id": "gravity-toy",
-            "description": "Fun physics simulation with balls",
+            "description": "Fun physics simulation using PIXI.JS",
 
             "url": "https://not-the.github.io/gravity-toy"
         },
@@ -97,10 +98,13 @@
 
             "url": "https://notkal.com/Maze-Algorithm",
             "about": "/projects/maze"
-        }
-    },
+        },
 
-    "projects_older": {
+
+
+
+
+
         "pong": {
             "name": "Pong",
             "id": "pong",
@@ -128,6 +132,7 @@
         "loading-screens": {
             "name": "CSS Loading Screens",
             "id": "loading-screens",
+            "description": "Simple CSS-only loading screens",
 
             "url": "https://not-the.github.io/Loading-Screens",
             "about": "/projects/css-loading-screens"

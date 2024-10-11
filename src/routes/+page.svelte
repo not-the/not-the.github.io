@@ -90,27 +90,29 @@
 
 <!---------- Main ---------->
 <main id="home" class="screen_height">
-    <video src="/assets/video/abstract_ds.mp4" id="banner" class="banner video_main" autoplay loop muted webkit-playsinline playsinline></video>
-    <div id="home_center">
-        <!-- Hello -->
-        <div class="home_block home_hello">
-            <h1 class="big_title">
-                I make<br/>
-                <span class="big_title_accent">Websites</span>
-            </h1><br/>
-            <a href="#projects" class="bold" style="font-family: var(--title-font)">Projects -></a> 
-        </div>
-
-        <!-- More -->
-        <div class="home_block home_more">
-            <p class="center">Available for <b class="emphasize">freelance work</b></p>
-            <br/>
-            <a href="#email">
-                <div class="button full_width bold button_blue" id="call_to_action">
-                    <p>Email me</p>
-                    <div class="button_shade"></div>
-                </div>
-            </a>
+    <div class="inner">
+        <video src="/assets/video/abstract_ds.mp4" id="banner" class="banner video_main" autoplay loop muted webkit-playsinline playsinline></video>
+        <div id="home_center">
+            <!-- Hello -->
+            <div class="home_block home_hello">
+                <h1 class="big_title">
+                    I make<br/>
+                    <span class="big_title_accent">Websites</span>
+                </h1><br/>
+                <a href="#projects" class="bold" style="font-family: var(--title-font)">Projects -></a> 
+            </div>
+    
+            <!-- More -->
+            <div class="home_block home_more">
+                <p class="center">Available for <b class="emphasize">freelance work</b></p>
+                <br/>
+                <a href="#email">
+                    <div class="button full_width bold button_blue" id="call_to_action">
+                        <p>Email me</p>
+                        <div class="button_shade"></div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -178,22 +180,19 @@
 
 
 <!---------- Projects ---------->
-<br/>
-<br/>
-<br/>
 <section id="projects" class="container" style="--disabled-container-width: 1100px">
     <!-- Title -->
     <!-- <h2>Projects</h2> -->
     
     <!-- List -->
     <div class="cards_container" id="project_cards">
-        <CardProject projectID="not-uno" />
+        <CardProject projectID="not-uno" pill="New" />
         <CardProject projectID="sand-toy" />
-        <CardProject projectID="mario-pixijs" />
-        <CardProject projectID="character-creator" />
         <CardProject projectID="carrot-clicker" />
-        <CardProject projectID="puzzle-cube" />
+        <CardProject projectID="character-creator" />
+        <CardProject projectID="mario-pixijs" />
         <CardProject projectID="gravity-toy" />
+        <CardProject projectID="puzzle-cube" />
         <CardProject projectID="maze-algorithm" />
     </div>
 

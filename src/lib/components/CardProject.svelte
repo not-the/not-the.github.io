@@ -6,7 +6,7 @@
     import data from "$lib/data/data.json"
 
     // Props
-    export let projectID, size = "large", hoverEffects = "all";
+    export let projectID, size = "large", hoverEffects = "all", pill;
 
     const project = data.projects?.[projectID] ?? data.projects["missing"];
 
@@ -17,12 +17,20 @@
 <a
     href={project.url}
     class={`card ${size}`}
-    style={`--img: url(${project.hero})`}
+    style={
+        `--img: url(${project.hero});
+        --bg-position: ${project.hero_position ?? "center"};`
+    }
     data-mouse-highlight={hoverEffects === "all" ? true : null}
 >
     <div class="inner">
         <!-- BG -->
         <div class="hover_bg"></div>
+
+        <!-- New pill -->
+        {#if pill}
+            <div class="card_pill">{pill}</div>
+        {/if}
 
         <!-- Title -->
         <div class="upper">
@@ -63,9 +71,9 @@
                 </div>
             {/if} -->
 
-            <!-- <div class="more_button">
+            <div class="more_button">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M479.84-110q-38.84 0-66.34-27.66t-27.5-66.5q0-38.84 27.66-66.34t66.5-27.5q38.84 0 66.34 27.66t27.5 66.5q0 38.84-27.66 66.34t-66.5 27.5Zm0-276q-38.84 0-66.34-27.66t-27.5-66.5q0-38.84 27.66-66.34t66.5-27.5q38.84 0 66.34 27.66t27.5 66.5q0 38.84-27.66 66.34t-66.5 27.5Zm0-276q-38.84 0-66.34-27.66t-27.5-66.5q0-38.84 27.66-66.34t66.5-27.5q38.84 0 66.34 27.66t27.5 66.5q0 38.84-27.66 66.34t-66.5 27.5Z"/></svg>
-            </div> -->
+            </div>
         </div>
     </div>
 </a>

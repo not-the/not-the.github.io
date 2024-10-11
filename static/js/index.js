@@ -42,8 +42,9 @@ const options = {
     cookies: JSON.parse(store('main_cookies')) ?? undefined,
     theme: false,
     reduce_motion: false,
+    three_d_effects: true,
     policy_version: store('main_policy_version'),
-    list: ['cookies', 'theme', 'reduce_motion'],
+    list: ['cookies', 'theme', 'reduce_motion', "three_d_effects"],
     set(name, state, save=true) {
 
         if(save) this.save(name, state);
@@ -86,6 +87,8 @@ const options = {
         <div id="options">
             <h3>Options</h3>
             <hr/>
+
+            <!-- Theme -->
             <div class="item">
                 <img src="/assets/icon/moon.svg" class="icon" id="theme_button_icon">
                 <p>Theme</p>
@@ -101,6 +104,8 @@ const options = {
                     <option value="twitter">Twitter</option>
                 </select>
             </div>
+
+            <!-- Reduce motion -->
             <div class="item">
                 <img src="/assets/icon/motion_mode_FILL0_wght600_GRAD0_opsz20.svg" class="icon">
                 <p>Reduce motion</p>
@@ -111,6 +116,20 @@ const options = {
                     <div class="off">O</div>
                 </label>
             </div>
+
+            <!-- 3D Effect -->
+            <!-- <div class="item">
+                <img src="" class="icon">
+                <p>3D Hover Effect</p>
+                <label class="switch">
+                    <input type="checkbox" data-option="three_d_effects">
+                    <span></span>
+                    <div class="on">I</div>
+                    <div class="off">O</div>
+                </label>
+            </div> -->
+
+            <!-- Cookie Consent -->
             <div class="item">
                 <img src="/assets/icon/cookie_FILL1_wght600_GRAD0_opsz48.svg" class="icon cookie_icon">
                 <p>
@@ -600,8 +619,31 @@ document.querySelectorAll("[data-mouse-highlight-area]").forEach(area => area.ad
             element.style.setProperty("--mouse-x", `${posX}px`);
             element.style.setProperty("--mouse-y", `${posY}px`);
 
-            element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / rect.width * 15}deg`);
-            element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -15}deg`);
+            // if(options.three_d_effects) {
+                element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / rect.width * 15}deg`);
+                element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -15}deg`);
+            // }
+
+
+            // Background depth effect
+            // element.style.setProperty("--bg-x", `${(posX - rect.width/2) / rect.width * 15}%`);
+            // element.style.setProperty("--bg-y", `${(posY - rect.height/2) / rect.height * 15}%`);
         };
     });
 }));
+
+// Home page rotation effect
+// const home = document.getElementById("home");
+// home.addEventListener("mousemove", event => {
+//     requestAnimationFrame(() => {
+//         const rect = home.getBoundingClientRect();
+//         const posX = event.clientX - rect.left;
+//         const posY = event.clientY - rect.top;
+    
+//         home.style.setProperty("--mouse-x", `${posX}px`);
+//         home.style.setProperty("--mouse-y", `${posY}px`);
+    
+//         home.style.setProperty("--rotate-y", `${(posX - rect.width/2) / rect.width * 10}deg`);
+//         home.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -10}deg`);
+//     })
+// })

@@ -10,7 +10,7 @@ modified: May 1, 2024
 id: web-development-resources
 tags: webdev
 
-contents: [{"name":"Get Started With Web Development","id":"get-started-with-web-development","children":[{"name":"Documentation","id":"documentation"},{"name":"Tutorials (Start Here)","id":"tutorials-start-here"},{"name":"CSS Learning Resources","id":"css-learning-resources"},{"name":"Additional Resources","id":"additional-resources"}]},{"name":"Code Editing Software","id":"code-editing-software"},{"name":"Concepts","id":"concepts","children":[{"name":"CSS Concepts","id":"css-concepts"},{"name":"Accessibility","id":"accessibility"},{"name":"Advanced concepts","id":"advanced-concepts"}]}]
+contents: [{"name":"Get Started With Web Development","id":"get-started-with-web-development","children":[{"name":"Documentation","id":"documentation"},{"name":"Tutorials (Start Here)","id":"tutorials-start-here"},{"name":"CSS Learning Resources & Games","id":"css-learning-resources"},{"name":"Additional Resources","id":"additional-resources"}]},{"name":"Code Editing Software","id":"code-editing-software"},{"name":"Concepts","id":"concepts","children":[{"name":"CSS Concepts","id":"css-concepts"},{"name":"Accessibility","id":"accessibility"},{"name":"Advanced concepts","id":"advanced-concepts"}]}]
 ---
 
 <h2 id="get-started-with-web-development">Get Started With Web Development</h2>
@@ -40,7 +40,7 @@ contents: [{"name":"Get Started With Web Development","id":"get-started-with-web
     <li><a href="https://react-tutorial.app/">React Tutorial</a> (Written &amp; Interactive)</li>
 </ul>
 
-<h4 id="css-learning-resources">CSS Learning Resources</h4>
+<h4 id="css-learning-resources">CSS Learning Resources & Games</h4>
 <ul>
     <li><a href="https://cssanimation.rocks/">https://cssanimation.rocks/</a></li>
     <li><a href="https://flexboxfroggy.com/">https://flexboxfroggy.com/</a> - This is a game that teaches you CSS'
