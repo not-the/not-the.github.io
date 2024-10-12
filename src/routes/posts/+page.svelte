@@ -12,13 +12,13 @@
     import p0 from '$lib/data/posts/carrot-clicker-changelog.md?raw'
     import p1 from '$lib/data/posts/pixijs-mario-changelog.md?raw'
     import p2 from '$lib/data/posts/web-development-resources.md?raw'
-    import p3 from '$lib/data/posts/sample.md?raw'
+    // import p3 from '$lib/data/posts/sample.md?raw'
 
     const posts = [
         mdToFormatted(p0),
         mdToFormatted(p1),
         mdToFormatted(p2),
-        mdToFormatted(p3),
+        // mdToFormatted(p3),
     ].reverse();
 </script>
 
