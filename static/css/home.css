@@ -28,7 +28,7 @@ body.theme_light {
     height: 100vh;
 
     border-radius: 16px;
-    transform: scale(1.3);
+    /* transform: scale(1.3); */
 }
 /* .theme_light #banner.video_main {
     filter: invert() hue-rotate(180deg) brightness(90%);
