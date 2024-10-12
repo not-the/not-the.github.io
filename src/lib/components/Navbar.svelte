@@ -12,16 +12,16 @@
         },
         {
             name: "Projects",
-            href: "/projects/"
+            href: "/projects"
             //, onclick: "toggleMenu()"
         },
         {
             name: "Blog",
-            href: "/posts/"
+            href: "/posts"
         },
         {
             name: "About",
-            href: "/about/"
+            href: "/about"
         }
     ];
 
