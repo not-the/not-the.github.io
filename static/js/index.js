@@ -647,3 +647,28 @@ document.querySelectorAll("[data-mouse-highlight-area]").forEach(area => area.ad
 //         home.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -10}deg`);
 //     })
 // })
+
+
+// Table of contents highlighting
+const contentsContainer = document.querySelector(".table_of_contents");
+if(contentsContainer) {
+    const contentsList = contentsContainer.querySelectorAll("a");
+    document.addEventListener("scroll", event => {
+        console.log("##################");
+
+        let found = false;
+
+        for(const link of contentsList) {
+            const heading = document.getElementById(link.href.split("#")[1]);
+            if(!heading) return;
+
+            const fromTop = heading.getBoundingClientRect().top;
+            const active = (Math.sign(fromTop) !== -1) && !found ? true : null;
+
+            // Update links
+            link.setAttribute("data-active", active);
+            if(active) found = true;
+        }
+    })
+}
+

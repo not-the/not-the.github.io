@@ -95,7 +95,9 @@
                         <ul>
                             {#each JSON.parse(info.contents) as item}
                                 <li>
-                                    <a href={`#${item.id}`}><p>{item.name}</p></a>
+                                    <a href={`#${item.id}`}>
+                                        <p>{item.name}</p>
+                                    </a>
 
                                     <!-- Children -->
                                     {#if item.children}
