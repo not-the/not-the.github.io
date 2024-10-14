@@ -19,6 +19,7 @@
     class={`card ${size}`}
     style={
         `--img: url(${project.hero});
+        --bg-color: ${project.color ?? "var(--night-lighter-bg)"};
         --bg-position: ${project.hero_position ?? "center"};`
     }
     data-mouse-highlight={hoverEffects === "all" ? true : null}

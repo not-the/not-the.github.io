@@ -14,7 +14,10 @@
 </script>
 
 <!-- HTML -->
-<a href={`/posts/${postID}`} class="card" style={`--img: ${info.banner}`} data-mouse-highlight>
+<a href={`/posts/${postID}`} class="card" style={`
+    --img: ${info.banner};
+    --bg-color: var(--night-lighter-bg);
+`} data-mouse-highlight>
     <div class="inner">
         <!-- BG -->
         <div class="hover_bg"></div>

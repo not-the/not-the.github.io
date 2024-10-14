@@ -19,13 +19,12 @@ body.theme_light {
 /* Landing */
 #banner.video_main {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: -1;
     object-fit: cover;
+
     width: 100%;
-    /* height: calc(100vh + var(--wave-offset)); */
-    height: 100vh;
+    height: 100%;
 
     border-radius: 16px;
     /* transform: scale(1.3); */
@@ -44,6 +43,8 @@ body.theme_light {
 #home {
     position: relative;
     overflow: hidden;
+
+    padding: 250px 0;
 }
 #home > .inner {
     width: 100%;
@@ -258,7 +259,20 @@ body.theme_light {
     right: -72px;
 }
 
-/* Projects list */
+/* Projects (home page) */
+#projects {
+    margin-top: -64px;
+
+    animation: projects_in 1s ease 0.2s;
+    animation-fill-mode: backwards;
+}
+@keyframes projects_in {
+    from {
+        transform: translateY(48px);
+        opacity: 0;
+    }
+}
+
 /* View more */
 #projects_list summary {
     background-color: var(--main-bg);
@@ -325,7 +339,7 @@ body.theme_light {
 /* Media queries */
 @media screen and (max-width: 600px) {
     /* Main */
-    #home { padding: 0 12px; }
+    #home { padding: 120px 0; }
     #home .home_block { width: 100%; margin: 0; }
     #home .home_hello { margin-bottom: 12px; }
     .skill { width: 100%; }

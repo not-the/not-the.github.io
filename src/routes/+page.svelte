@@ -89,7 +89,7 @@
 <Navbar activeTab={"Home"} />
 
 <!---------- Main ---------->
-<main id="home" class="screen_height">
+<main id="home">
     <div class="inner">
         <video src="/assets/video/abstract_ds.mp4" id="banner" class="banner video_main" autoplay loop muted webkit-playsinline playsinline></video>
         <div id="home_center">

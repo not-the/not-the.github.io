@@ -28,6 +28,7 @@
             "logo": "https://uno.notkal.com/LOGO@2x.png",
             "hero": "/assets/project/not_uno_banner_notext.png",
             "hero_position": "center",
+            "color": "#0F271CFF",
     
             "url": "https://uno.notkal.com",
             "about": "/"
@@ -40,6 +41,7 @@
             "hero": "/assets/project/sandtoy%20scene.png",
             "hero_position": "center right",
             "icon": "/assets/project/SandToyIcon.png",
+            "color": "#1E2A38FF",
     
             "url": "https://sandtoy.notkal.com",
             "about": "/"
@@ -51,6 +53,7 @@
             "hero": "/assets/project/piximario.png",
             "hero_position": "center 80%",
             "icon": "https://mario.notkal.com/favicon.png",
+            "color": "#242430FF",
     
             "url": "https://mario.notkal.com",
             "about": "/pixijs-mario"
@@ -71,6 +74,8 @@
 
             "logo": "/assets/project/Carrot Clicker logo-h.png",
             "hero": "/assets/project/carrot_clicker_big.png",
+            "color": "#242222",
+
             "about": "/projects/carrot-clicker",
             "url": "https://carrot.notkal.com"
         },
@@ -95,6 +100,7 @@
             "name": "Maze Algorithm",
             "id": "maze-algorithm",
             "hero": "/assets/project/maze.png",
+            "color": "#1F252BFF",
 
             "url": "https://notkal.com/Maze-Algorithm",
             "about": "/projects/maze"
