@@ -4,6 +4,7 @@
     import Navbar from '$lib/components/Navbar.svelte'
     import Footer from '$lib/components/Footer.svelte'
     import Header from '$lib/components/Header.svelte'
+    import Tags from './Tags.svelte'
 
     // Functions
     import { mdToFormatted, formatDate } from '$lib/functions.js'
@@ -73,7 +74,7 @@
 
                 <!-- Metadata -->
                 {#if info.created}
-                    <div class="info_meta">
+                    <div class="info_meta info_item">
                         <p>
                             Posted<br />
                             <span class="emphasize">{formatDate(info.created)}</span><br/>
@@ -88,9 +89,16 @@
                     </div>
                 {/if}
 
+                <!-- Tags -->
+                {#if info.tags}
+                    <div class="info_item">
+                        <Tags tagsString={info.tags} />
+                    </div>
+                {/if}
+
                 <!-- Table of contents -->
                 {#if info.contents}
-                    <nav class="table_of_contents" aria-label="Contents">
+                    <nav class="table_of_contents info_item" aria-label="Contents">
                         <strong>Contents</strong><br />
                         <ul>
                             {#each JSON.parse(info.contents) as item}

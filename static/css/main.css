@@ -335,7 +335,7 @@ body.theme_twitter {
 
     transition: background-color 0.15s ease;
 }
-/* html { scroll-behavior: smooth; } */
+html { scroll-behavior: smooth; }
 body {
     accent-color: var(--accent-color);
     
@@ -1292,15 +1292,15 @@ nav .button_icon {
 .card .tags_list {
     margin-left: auto;
 }
-.card .tag {
-    font-size: 10pt;
-}
+
 
 /* Tags */
 .tags_list {
     gap: 3px;
     display: flex;
 }
+/* Smaller when in list and not inline */
+.tags_list .tag { font-size: 10pt; }
 
 .tag {
     --color: rgb(185, 222, 255);

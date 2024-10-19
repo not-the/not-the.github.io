@@ -1,11 +1,12 @@
 <script>
+    // Components
+    import Tags from './Tags.svelte'
+
     // Functions
     import { formatDate } from '$lib/functions.js'
 
     // Props
     export let postID, info, body;
-
-    const tags = info?.tags?.split?.(', ') ?? false;
 
     // Get post info
     // let info = {}, body = '';
@@ -41,12 +42,7 @@
 
             <!-- Tags -->
             {#if info.tags}
-                <div class="tags_list">
-                    <!-- <div class="tag" style="--color: white;">#dev</div> -->
-                    {#each tags as tag}
-                        <div class="tag">#{tag}</div>
-                    {/each}
-                </div>
+                <Tags tagsString={info.tags} />
             {/if}
         </div>
     </div>
