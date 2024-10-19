@@ -1095,6 +1095,8 @@ nav .button_icon {
 
 /* Card */
 .card {
+    --text: var(--night-text);
+
     --bg-position: center;
 
     display: block;
@@ -1123,8 +1125,12 @@ nav .button_icon {
     box-shadow: var(--project-box-shadow-hover);
     /* z-index: 1; */
 }
-.card:hover:not([data-mouse-highlight]),
-.card:focus-visible:not([data-mouse-highlight]) {
+
+/* Hover (non-highlight) */
+.card:not([data-mouse-highlight]):hover,
+.card:not([data-mouse-highlight]):focus-visible,
+.reduced_motion .card:hover,
+.reduced_motion .card:focus-visible {
     background-color: white;
 }
 
@@ -1745,10 +1751,12 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
 [data-mouse-highlight] {
     position: relative;
     /* --glow-color: 255, 255, 255; */
+    transition: transform 0.3s ease;
 }
 /* Hover */
 [data-mouse-highlight]:hover {
     transform: perspective(900px) rotateY(var(--rotate-y)) rotateX(var(--rotate-x));
+    transition: unset;
 }
 
 /* Background depth effect */
