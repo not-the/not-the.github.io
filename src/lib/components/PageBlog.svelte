@@ -14,7 +14,7 @@
     export let file, slug, activeTab;
 
     // Get post info
-    let { info, body } = mdToFormatted(file);
+    const { info, body } = mdToFormatted(file);
 </script>
 
 

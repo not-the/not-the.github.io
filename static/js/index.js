@@ -588,20 +588,33 @@ scrollHandler();
 window.onresize = () => { if(hamburger_open && window.innerWidth > mobile_layout_width) toggleMenu(); };
 
 /** On load */
-(() => {
-    // Reduced motion
-    const reduce_motion_preference = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-})()
+// (() => {
+//     // Reduced motion
+//     const reduce_motion_preference = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+// })()
 //#endregion
 
 // Easter Egg
 try {
-    document.querySelector('#easter_egg').addEventListener('input', e => {
-        let root = document.querySelector(':root');
-        root.style.setProperty('--accent-color', e.srcElement.value);
-        root.style.setProperty('--link-color', e.srcElement.value);
-        root.style.setProperty('--gradient-b', e.srcElement.value);
+    const colorPicker = document.querySelector('#easter_egg');
+    colorPicker.addEventListener('input', e => {
+        const value = e.srcElement.value;
+
+        setAccentColor(value);
     });
+
+    function setAccentColor(value) {
+        const root = document.querySelector(':root');
+        root.style.setProperty('--accent-color', `color-mix(in srgb, ${value} 75%, black)`);
+        root.style.setProperty('--link-color', value);
+        root.style.setProperty('--gradient-b', value);
+
+        sessionStore("main_easter_egg", value);
+        colorPicker.value = value;
+    }
+
+    const stored = sessionStore("main_easter_egg");
+    if(stored) setAccentColor(stored);
 } catch (error) { console.warn(error); }
 
 
