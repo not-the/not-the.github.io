@@ -2,7 +2,7 @@
     import PageBlog from "$lib/components/PageBlog.svelte";
 
     // Data
-    import file from '$lib/data/posts/about.md?raw'
+    import file from '$lib/data/markdown/about.md?raw'
 
 
     const slug = "about"

@@ -22,7 +22,7 @@
         --bg-color: ${project.color ?? "var(--night-lighter-bg)"};
         --bg-position: ${project.hero_position ?? "center"};`
     }
-    data-mouse-highlight={hoverEffects === "all" ? true : null}
+    data-mouse-highlight={hoverEffects ?? null}
 >
     <div class="inner">
         <!-- BG -->

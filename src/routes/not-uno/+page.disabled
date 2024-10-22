@@ -1,0 +1,19 @@
+<script>
+    import PageBlog from "$lib/components/PageBlog.svelte";
+
+    // Data
+    import file from '$lib/data/markdown/not-uno.md?raw'
+
+
+    const slug = "not-uno"
+</script>
+
+<!-- HEAD -->
+<svelte:head>
+    <!-- Email obfuscate -->
+    <!-- <script src="/js/obfuscate.js" defer></script> -->
+</svelte:head>
+
+
+<!-- JS -->
+<PageBlog {file} {slug} activeTab="Projects" />

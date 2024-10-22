@@ -197,7 +197,7 @@
     </div>
 
     <br/>
-    <CardProject projectID="all-projects" size="small" hoverEffects="none" />
+    <CardProject projectID="all-projects" size="small" hoverEffects="highlight" />
 
 </section>
 
@@ -209,8 +209,10 @@
     <div id="contact_list" class="media_flex">
         <!-- Left col -->
         <div class="contact_item" id="form">
-            <div class="full_width" style="padding: 6px;">
-                <p class="secondary_text" style="display: inline-block; padding-bottom: 12px; padding-left: 3px;">Send me a message</p>
+            <div class="inner full_width">
+                <p class="secondary_text" style="display: inline-block; padding-bottom: 12px; padding-left: 4px;">
+                    Send me a message
+                </p>
                 <form action="https://formsubmit.co/ab074334a2691755cc5fc1c4e5d11589" method="POST">
                     <input type="hidden" name="_next" value="https://notkal.com/#t=Message%20Sent">
                     <input type="hidden" name="_template" value="table">
@@ -236,24 +238,27 @@
 
         <!-- Right col -->
         <div class="right_col">
-            <div class="contact_item" id="email">
-                <img src="/assets/icon/mail_24dp_FILL1_wght600_GRAD0_opsz20.svg" alt="" class="icon white_icon">
-                <div>
-                    <strong>Email</strong>
-                    <a href="javascript:;" role="button" tabindex="0" data-obfuscated>
-                        Click to reveal
-                    </a>
+            <div class="contact_item" id="email" data-mouse-highlight="highlight">
+                <div class="inner">
+                    <img src="/assets/icon/mail_24dp_FILL1_wght600_GRAD0_opsz20.svg" alt="" class="icon white_icon">
+                    <div>
+                        <strong>Email</strong>
+                        <a href="javascript:;" role="button" tabindex="0" data-obfuscated>
+                            Click to reveal
+                        </a>
+                    </div>
                 </div>
             </div>
     
-            <div class="contact_item">
-                <img src="/assets/icon/github.svg" alt="" class="icon">
-                <div>
-                    <strong>Github</strong>
-                    <a href="https://github.com/not-the" rel="noreferrer">https://github.com/not-the</a>
+            <div class="contact_item" data-mouse-highlight="highlight">
+                <div class="inner">
+                    <img src="/assets/icon/github.svg" alt="" class="icon">
+                    <div>
+                        <strong>Github</strong>
+                        <a href="https://github.com/not-the" rel="noreferrer">https://github.com/not-the</a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 

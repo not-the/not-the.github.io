@@ -609,20 +609,25 @@ try {
 
 // Mouse highlight effect
 // Inspired by https://codepen.io/Hyperplexed/pen/MWQeYLW
-document.querySelectorAll("[data-mouse-highlight-area]").forEach(area => area.addEventListener("mousemove", event => {
+document.querySelectorAll("[data-mouse-area]").forEach(area => area.addEventListener("mousemove", event => {
     requestAnimationFrame(() => {
         for(const element of area.querySelectorAll("[data-mouse-highlight]")) {
+            const property = element.dataset.mouseHighlight;
             const rect = element.getBoundingClientRect();
             const posX = event.clientX - rect.left;
             const posY = event.clientY - rect.top;
 
-            element.style.setProperty("--mouse-x", `${posX}px`);
-            element.style.setProperty("--mouse-y", `${posY}px`);
+            if(property === "all" || property === "highlight") {
+                element.style.setProperty("--mouse-x", `${posX}px`);
+                element.style.setProperty("--mouse-y", `${posY}px`);
+            }
 
-            // if(options.three_d_effects) {
-                element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / rect.width * 15}deg`);
-                element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -15}deg`);
-            // }
+            if(property === "all" || property === "perspective") {
+                // if(options.three_d_effects) {
+                    element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / rect.width * 15}deg`);
+                    element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -15}deg`);
+                // }
+            }
 
 
             // Background depth effect

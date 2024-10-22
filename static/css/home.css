@@ -316,13 +316,23 @@ body.theme_light {
 }
 .contact_item {
     background-color: var(--lighter-bg);
-    padding: 8px 12px;
+    padding: 1px;
     border-radius: 8px;
+
+    overflow: hidden;
+}
+.contact_item > .inner {
+    background-color: var(--lighter-bg);
+    padding: 12px 15px;
+    border-radius: 8px;
+
+    position: relative;
+    z-index: 1;
 }
 .contact_item img.icon {
-    margin: 4px 12px 0 2px;
-    width: 32px;
-    height: 32px;
+    margin: 4px 12px 2px 0;
+    width: 36px;
+    height: 36px;
 
     opacity: 0.8;
 }

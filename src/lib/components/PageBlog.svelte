@@ -5,6 +5,7 @@
     import Footer from '$lib/components/Footer.svelte'
     import Header from '$lib/components/Header.svelte'
     import Tags from './Tags.svelte'
+    // import CardProject from '$lib/components/CardProject.svelte'
 
     // Functions
     import { mdToFormatted, formatDate } from '$lib/functions.js'
