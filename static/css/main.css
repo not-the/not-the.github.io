@@ -375,6 +375,10 @@ hr {
     margin-bottom: 3px;
 }
 
+svg > path {
+    fill: var(--fill);
+}
+
 /* Inputs */
 *[role="button"], button, .button {
     cursor: pointer;
@@ -1129,25 +1133,25 @@ nav .button_icon {
 /* Hover (non-highlight) */
 .card:not([data-mouse-highlight]):hover,
 .card:not([data-mouse-highlight]):focus-visible,
+.card:not([data-mouse-highlight]):focus-within,
 .reduced_motion .card:hover,
 .reduced_motion .card:focus-visible {
     background-color: white;
 }
 
-/* .card > .hover_bg {
-    background: color-mix(in srgb, var(--lighter-bg) 30%, transparent);
-    backdrop-filter: saturate(120%) blur(3px);
+.card .link_area {
     position: absolute;
     inset: 0;
-    z-index: 0;
-
-    opacity: 0;
-    transition: opacity 0.2s ease;
+    z-index: 1;
+    border-radius: inherit;
+}
+.card .link_area > span {
+    display: none;
 }
 .card:hover > .hover_bg,
 .card:focus-visible > .hover_bg {
     opacity: 1;
-} */
+}
 
 .card > .inner {
     /* Dark mode */
@@ -1277,16 +1281,29 @@ nav .button_icon {
 
 .card .lower {
     margin-top: 3px;
-    align-items: center;
+    align-items: bottom;
     gap: 12px;
 }
 
 /* Card more */
 .card .more_button {
-    margin-left: auto;
+    --fill: var(--secondary-text);
 
+    position: relative;
+    z-index: 2;
+
+    margin-left: auto;
+    /* box-sizing: content-box; */
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
 }
-.card .more_button > svg { vertical-align: middle; fill: var(--secondary-text); }
+.card .more_button:hover,
+.card .more_button:focus-visible {
+    --fill: var(--text);
+    background-color: var(--night-nav-button-hover-bg);
+}
 
 /* Card tags */
 .card .tags_list {
