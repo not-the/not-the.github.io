@@ -8,8 +8,8 @@
     {
         "name": "Projects",
         "icon": "/assets/icon.png",
-        "url": "/#projects",
-        "type": "Home"
+        "url": "/projects",
+        "type": "/projects"
     },
     {
         "name": "Contact",

@@ -3,6 +3,7 @@ title: Web Development Resources
 description: This is a list of websites, resources, and concepts to check out if you're getting started with web development.
 author: not-the
 banner: url('/assets/banner/gradient_4.png')
+# card_accent: #3A2727FF
 
 created: November 24, 2023
 modified: May 1, 2024

@@ -28,7 +28,7 @@
             "logo": "https://uno.notkal.com/LOGO@2x.png",
             "hero": "/assets/project/not_uno_banner_notext.png",
             "hero_position": "center",
-            "color": "#0F271CFF",
+            "color": "#0E3523FF",
     
             "url": "https://uno.notkal.com",
             "about": "/"
@@ -49,6 +49,7 @@
         "mario-pixijs": {
             "name": "PIXI.JS Mario",
             "id": "mario-pixijs",
+            "description": "Super Mario Bros. physics recreated from scratch in PIXI.JS",
     
             "hero": "/assets/project/piximario.png",
             "hero_position": "center 80%",
@@ -61,7 +62,7 @@
         "character-creator": {
             "name": "Character Creator",
             "id": "character-creator",
-            "description": "Create your own Carrot Clicker character",
+            "description": "Create your own Carrot Clicker character!",
 
             "hero": "/assets/project/character_creator_2.png",
 

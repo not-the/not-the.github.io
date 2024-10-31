@@ -1751,8 +1751,9 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
 
 /* Hover glow */
 [data-mouse-highlight] {
+    /* --glow-color: rgb(81, 162, 255); */
+    --glow-color: white;
     position: relative;
-    /* --glow-color: 255, 255, 255; */
     transition: transform 0.3s ease;
 }
 /* Hover */
@@ -1795,7 +1796,7 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
 [data-mouse-highlight]::before {
     background: radial-gradient(
         560px circle at var(--mouse-x) var(--mouse-y),
-        white,
+        var(--glow-color),
         transparent 40%
     );
     z-index: 0;

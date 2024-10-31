@@ -8,6 +8,8 @@
     // Props
     export let projectID, size = "large", hoverEffects = "all", pill;
 
+    if(hoverEffects === "none") hoverEffects = null;
+
     const project = data.projects?.[projectID] ?? data.projects["missing"];
 
     // const tags = info?.tags?.split?.(', ') ?? false;
@@ -64,13 +66,13 @@
             {/if}
 
             <!-- Tags -->
-            <!-- {#if info.tags}
+            {#if project.tags}
                 <div class="tags_list">
-                    {#each tags as tag}
+                    {#each project.tags as tag}
                         <div class="tag">#{tag}</div>
                     {/each}
                 </div>
-            {/if} -->
+            {/if}
 
             <!-- <div class="more_button">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M479.84-110q-38.84 0-66.34-27.66t-27.5-66.5q0-38.84 27.66-66.34t66.5-27.5q38.84 0 66.34 27.66t27.5 66.5q0 38.84-27.66 66.34t-66.5 27.5Zm0-276q-38.84 0-66.34-27.66t-27.5-66.5q0-38.84 27.66-66.34t66.5-27.5q38.84 0 66.34 27.66t27.5 66.5q0 38.84-27.66 66.34t-66.5 27.5Zm0-276q-38.84 0-66.34-27.66t-27.5-66.5q0-38.84 27.66-66.34t66.5-27.5q38.84 0 66.34 27.66t27.5 66.5q0 38.84-27.66 66.34t-66.5 27.5Z"/></svg>

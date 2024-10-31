@@ -17,7 +17,7 @@
 <!-- HTML -->
 <a href={`/posts/${postID}`} class="card" style={`
     --img: ${info.banner};
-    --bg-color: var(--night-lighter-bg);
+    --bg-color: ${info.card_accent ?? "var(--night-lighter-bg)"};
 `} data-mouse-highlight="all">
     <div class="inner">
         <!-- BG -->
