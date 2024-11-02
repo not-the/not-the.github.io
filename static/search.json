@@ -141,5 +141,10 @@
         "name": "Web Development Resources",
         "url": "/posts/web-development-resources",
         "type": "Blog post"
+    },
+    {
+        "name": "NOT UNO Changelog",
+        "url": "/posts/not-uno-changelog",
+        "type": "Blog post"
     }
 ]
