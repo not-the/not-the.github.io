@@ -10,10 +10,21 @@ modified: 11/8/2024
 id: not-uno-changelog
 tags: gamedev, changelog
 
-contents: [{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
+contents: [{"name":"November 10, 2024","id":"November-10-2024"},{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
 ---
 
 Update history for [NOT UNO](https://uno.notkal.com/)
+
+<article id="November-10-2024">
+<h2>November 10, 2024 <a href="#November-10-2024"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+  
+- Max players option
+- Newly drawn cards will now be scrolled into view
+- You can scroll through overflowing cards with the mouse wheel
+- Fixed draw debt (on end turn button) not getting cleared when a new game is started
+- White screen/crash fixes
+
+</article>
 
 <article id="November-8-2024">
 <h2>November 8, 2024 <a href="#November-8-2024"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
