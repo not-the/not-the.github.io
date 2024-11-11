@@ -18,7 +18,7 @@
     let contactFormEmail = '';
     let contactFormMessage = '';
 
-    $: contactFormFilled = contactFormEmail.length !== 0 && contactFormMessage.length !== 0;
+    // $: contactFormFilled = contactFormEmail.length !== 0 && contactFormMessage.length !== 0;
 
 
     // onMount(() => {

@@ -15,6 +15,7 @@
 
             "name": "All projects ->",
             "id": "all-projects",
+            "color": "var(--night-main-bg)",
 
             "url": "/projects",
             "card_url": false
@@ -31,7 +32,15 @@
             "color": "#0E3523FF",
     
             "url": "https://uno.notkal.com",
-            "about": "/"
+            "about": "/",
+            "context": [
+                {
+                    "name": "Post: NOT UNO Changelog",
+                    "href": "/posts/not-uno-changelog",
+                    "icon": "/assets/icon_96x.png",
+                    "icon_classes": "white_icon"
+                }
+            ]
         },
         "sand-toy": {
             "name": "Sand Toy",
@@ -44,6 +53,7 @@
             "color": "#1E2A38FF",
     
             "url": "https://sandtoy.notkal.com",
+            "repo": "https://github.com/not-the/sand-toy",
             "about": "/"
         },
         "mario-pixijs": {
@@ -57,7 +67,17 @@
             "color": "#242430FF",
     
             "url": "https://mario.notkal.com",
-            "about": "/pixijs-mario"
+            "repo": "https://github.com/not-the/mario-pixijs",
+            "about": "/pixijs-mario",
+
+            "context": [
+                {
+                    "name": "Post: PIXI.JS Mario Changelog",
+                    "href": "/posts/pixijs-mario-changelog",
+                    "icon": "/assets/icon_96x.png",
+                    "icon_classes": "white_icon"
+                }
+            ]
         },
         "character-creator": {
             "name": "Character Creator",
@@ -66,7 +86,8 @@
 
             "hero": "/assets/project/character_creator_2.png",
 
-            "url": "https://notkal.com/Character-Creator"
+            "url": "https://notkal.com/Character-Creator",
+            "repo": "https://github.com/not-the/Character-Creator"
         },
         "carrot-clicker": {
             "name": "Carrot Clicker",
@@ -78,7 +99,17 @@
             "color": "#242222",
 
             "about": "/projects/carrot-clicker",
-            "url": "https://carrot.notkal.com"
+            "url": "https://carrot.notkal.com",
+            "repo": "https://github.com/not-the/Carrot-Clicker",
+
+            "context": [
+                {
+                    "name": "Post: Carrot Clicker Changelog",
+                    "href": "/posts/carrot-clicker-changelog",
+                    "icon": "/assets/icon_96x.png",
+                    "icon_classes": "white_icon"
+                }
+            ]
         },
         "puzzle-cube": {
             "name": "Rubik's Cube",
@@ -88,6 +119,7 @@
             "hero_position": "right",
     
             "url": "https://rubiks.notkal.com",
+            "repo": "https://github.com/not-the/puzzle-cube",
             "about": "/projects/rubiks-cube"
         },
         "gravity-toy": {
@@ -95,7 +127,8 @@
             "id": "gravity-toy",
             "description": "Fun physics simulation using PIXI.JS",
 
-            "url": "https://not-the.github.io/gravity-toy"
+            "url": "https://not-the.github.io/gravity-toy",
+            "repo": "https://github.com/not-the/gravity-toy"
         },
         "maze-algorithm": {
             "name": "Maze Algorithm",
@@ -104,6 +137,7 @@
             "color": "#1F252BFF",
 
             "url": "https://notkal.com/Maze-Algorithm",
+            "repo": "https://github.com/not-the/Maze-Algorithm",
             "about": "/projects/maze"
         },
 
@@ -118,6 +152,7 @@
             "hero": "/assets/project/pong.png",
 
             "url": "https://notkal.com/Pong",
+            "repo": "https://github.com/not-the/Pong",
             "about": "/projects/pong"
         },
         "tictactoe": {
@@ -126,6 +161,7 @@
             "hero": "/assets/project/ttt.png",
 
             "url": "https://tictactoe.notkal.com",
+            "repo": "https://github.com/not-the/TicTacToe",
             "about": "/projects/tic-tac-toe"
         },
         "Mouse-Confetti": {
@@ -134,6 +170,7 @@
             "hero": "/assets/project/confetti.png",
 
             "url": "https://notkal.com/Mouse-Confetti",
+            "repo": "https://github.com/not-the/Mouse-Confetti",
             "about": "/projects/html-confetti"
         },
         "loading-screens": {
@@ -142,6 +179,7 @@
             "description": "Simple CSS-only loading screens",
 
             "url": "https://not-the.github.io/Loading-Screens",
+            "repo": "https://github.com/not-the/Loading-Screens",
             "about": "/projects/css-loading-screens"
         },
         "iss-tracker-app": {
@@ -149,6 +187,7 @@
             "id": "iss-tracker-app",
 
             "url": "https://notkal.com/iss-tracker-app/",
+            "repo": "https://github.com/not-the/iss-tracker-app",
             "about": "/projects/iss-tracker"
         },
         "geolocation-html": {
@@ -156,6 +195,7 @@
             "id": "geolocation-html",
 
             "url": "https://not-the.github.io/geolocation-html",
+            "repo": "https://github.com/not-the/geolocation-html",
             "about": "/projects/geolocation"
         },
         "js-pyramid": {
@@ -163,6 +203,7 @@
             "id": "js-pyramid",
 
             "url": "https://not-the.github.io/js-pyramid",
+            "repo": "https://github.com/not-the/js-pyramid",
             "about": "/projects/js-pyramid"
         },
         "leap-years-list": {
@@ -170,6 +211,7 @@
             "id": "leap-years-list",
 
             "url": "https://not-the.github.io/LeapYear",
+            "repo": "https://github.com/not-the/LeapYear",
             "about": "/projects/leap-years-list"
         }
     }

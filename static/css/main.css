@@ -57,7 +57,7 @@
     --day-dark-border-color:   rgba(199, 199, 199, 0.3);
     --day-border-color:        #acacad;
     --day-border-transparent:  rgba(0, 0, 0, 0.1);
-    --day-nav-button-hover-bg: rgb(255, 255, 255, 0.1);
+    --day-nav-button-hover-bg: rgba(19, 19, 19, 0.15);
 
     /* Text and elements */
     --day-text:                rgb(28, 11, 48);
@@ -378,6 +378,7 @@ hr {
 svg > path {
     fill: var(--fill);
 }
+img[src="none"] { opacity: 0; }
 
 /* Inputs */
 *[role="button"], button, .button {
@@ -1763,6 +1764,64 @@ code[data-lang="js"] span.code-keyword { color: var(--js-keyword); }
 }
 @keyframes toast_expires {
     to { width:0; }
+}
+
+
+/* Context menu */
+menu#context_menu {
+    --top: 0px; --left: 0px;
+
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    z-index: 102;
+
+    display: flex;
+    flex-direction: column;
+    /* gap: 6px; */
+
+    max-width: 100%;
+    width: 280px;
+
+    background-color: var(--transparent-bg);
+    backdrop-filter: blur(16px);
+    border-radius: 12px;
+    border: 1px solid var(--border-transparent);
+    padding: 6px;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.3);
+
+    list-style-type: none;
+
+    animation: opacity_in 0.2s ease;
+}
+@keyframes opacity_in {
+    from { opacity: 0; }
+}
+menu#context_menu a {
+    color: inherit;
+}
+menu#context_menu li {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 12px;
+
+    color: var(--secondary-text);
+
+    border-radius: 6px;
+    padding: 9px 12px;
+}
+menu#context_menu li:hover,
+menu#context_menu li:focus-visible {
+    background-color: var(--nav-button-hover-bg);
+    color: var(--text);
+}
+menu#context_menu li > img {
+    height: 20px;
+    width: 20px;
+}
+menu#context_menu hr {
+    background-color: var(--border-transparent);
 }
 
 

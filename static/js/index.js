@@ -12,6 +12,7 @@ const mobile_layout_width = 600;
 let hamburger_open = false;
 let ti1; // Timeout 1
 let ti2; // Timeout 2
+let data;
 let searchdata;
 let privacy_policy_version = 2;
 
@@ -690,3 +691,78 @@ if(contentsContainer) {
     })
 }
 
+
+// Context menus
+let currentContextMenu = undefined;
+document.querySelectorAll("[data-context]").forEach(element => element.addEventListener("contextmenu", event => {
+    let str = event.currentTarget.dataset.context;
+    if(str === undefined) return;
+
+    // Existing context menu
+    // console.log(currentContextMenu === str);
+    if(closeContextMenu() || currentContextMenu === str) return;
+    currentContextMenu = str;
+
+    // Disable browser context menu
+    event.preventDefault();
+
+    // Get data
+    const contextArray = JSON.parse(str);
+
+    // Create element
+    const menu = document.createElement("menu");
+    menu.id = "context_menu";
+    menu.style = `--top: ${event.pageY}px; --left: ${event.pageX}px;`;
+    menu.setAttribute("tabindex", "0");
+
+    const html = contextArray.map(item => {
+        // hr
+        if(item === "hr") return "<hr/>";
+
+        // No anchor
+        let inner = `
+            <img src="${item.icon ?? "none"}" alt="" class="icon ${item.icon_classes}">
+            <span>${item.name}</span>`;
+
+        if(!item.href) {
+            return `
+                <li role="button" tabindex="0" onclick="closeContextMenu('${item.action_copy}')">
+                    ${inner}
+                </li>
+            `
+        }
+
+        // Link
+        return `
+            <a href="${item.href}" ${item.target ? `target=${item.target}` : ""}>
+                <li>
+                    ${inner}
+                </li>
+            </a>
+        `;
+    }).join("\n");
+
+    // Listeners
+    menu.innerHTML = html;
+    menu.addEventListener("contextmenu", event => event.preventDefault());
+    menu.addEventListener("blur", event => {
+        const menu = event.currentTarget;
+        const focused = menu.matches(':focus, :focus-within');
+        if(!focused) closeContextMenu();
+    })
+
+    // Append
+    document.body.append(menu);
+    menu.focus();
+}));
+
+function closeContextMenu(text_to_copy) {
+    if(text_to_copy) navigator.clipboard.writeText(text_to_copy);
+
+    const existing = document.getElementById("context_menu");
+    if(existing) {
+        existing.remove();
+        currentContextMenu = undefined;
+        return true;
+    }
+}

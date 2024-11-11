@@ -13,6 +13,35 @@
     const project = data.projects?.[projectID] ?? data.projects["missing"];
 
     // const tags = info?.tags?.split?.(', ') ?? false;
+
+    const context = [
+        {
+            name: "Open link in new tab",
+            href: project.url,
+            target: "_blank"
+        },
+        {
+            name: "Copy link address",
+            action_copy: project.url
+        }
+    ];
+
+    // Custom context entries
+    if(project.context) {
+        context.push("hr", ...project.context);
+    }
+
+    // Repo
+    if(project.repo) {
+        context.push(
+            "hr",
+            {
+                name: `${project.name} on Github`,
+                href: project.repo,
+                icon: "/assets/icon/github.svg"
+            }
+        );
+    }
 </script>
 
 <!-- HTML -->
@@ -25,6 +54,8 @@
         --bg-position: ${project.hero_position ?? "center"};`
     }
     data-mouse-highlight={hoverEffects ?? null}
+
+    data-context={JSON.stringify(context)}
 >
     <div class="inner">
         <!-- BG -->
