@@ -187,6 +187,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
     color: var(--secondary-color);
 }
 .table_of_contents a > p {
+    display: inline-block;
     padding: 3px 6px;
     margin: 0 !important;
     border-radius: 6px;
