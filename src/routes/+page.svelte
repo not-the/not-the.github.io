@@ -76,7 +76,7 @@
     <!-- <meta name="twitter:card" content="summary_large_image"> -->
 
     <!-- Animate on Scroll -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
     <!-- Home Page JS -->
     <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->

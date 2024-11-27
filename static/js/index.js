@@ -628,10 +628,10 @@ document.querySelectorAll("[data-mouse-area]").forEach(area => area.addEventList
         for(const element of area.querySelectorAll("[data-mouse-highlight]")) {
             const property = element.dataset.mouseHighlight;
             const rect = element.getBoundingClientRect();
-            const posX = event.clientX - rect.left;
-            const posY = event.clientY - rect.top;
+            const posX = (event.clientX - rect.left).toFixed(0);
+            const posY = (event.clientY - rect.top).toFixed(0);
 
-            if(property === "all" || property === "highlight") {
+            if(["all", "highlight"].includes(property)) {
                 element.style.setProperty("--mouse-x", `${posX}px`);
                 element.style.setProperty("--mouse-y", `${posY}px`);
             }
