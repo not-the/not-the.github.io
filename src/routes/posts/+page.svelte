@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="/css/project.css">
     <meta name="theme-color" content="#171718"/>
 
-    <link rel="stylesheet" href="/css/home.css">
+    <!-- <link rel="stylesheet" href="/css/home.css"> -->
 
     <!-- Meta -->
     <meta property="og:url" content="https://notkal.com/posts">

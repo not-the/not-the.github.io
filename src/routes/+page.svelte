@@ -81,6 +81,12 @@
     <!-- Home Page JS -->
     <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
     <script src="/js/obfuscate.js" defer></script>
+    
+    <!-- Canvas -->
+    <script src="https://pixijs.download/v8.6.2/pixi.js"></script>
+    <script src="https://github.com/pixijs/pixijs/releases/download/v8.6.2/advanced-blend-modes.js"></script>
+    <script src="https://github.com/pixijs/filters/releases/download/v6.0.5/pixi-filters.js"></script>
+    <script src="/js/grid-canvas.js" type="module"></script>
 
 </svelte:head>
 
@@ -91,27 +97,38 @@
 <!---------- Main ---------->
 <main id="home">
     <div class="inner">
-        <video src="/assets/video/abstract_ds.mp4" id="banner" class="banner video_main" autoplay loop muted webkit-playsinline playsinline></video>
-        <div id="home_center">
+        <!-- <video src="/assets/video/abstract_ds.mp4" id="banner" class="banner video_main" autoplay loop muted webkit-playsinline playsinline></video> -->
+        <div id="banner" class="home_banner">
+            <div id="deco1"/>
+            <div id="deco2"/>
+        </div>
+
+        <div id="home_center" class="container">
             <!-- Hello -->
-            <div class="home_block home_hello">
-                <h1 class="big_title">
-                    I make<br/>
-                    <span class="big_title_accent">Websites</span>
-                </h1><br/>
-                <a href="#projects" class="bold" style="font-family: var(--title-font)">Projects -></a> 
+            <div class="home_block home_hello" data-mouse-highlight="highlight">
+                <div class="inner">
+                    <h1 class="big_title">
+                        I make<br/>
+                        <span class="big_title_accent">
+                            websites
+                        </span>
+                    </h1><br/>
+                    <a href="#projects" class="bold" style="font-family: var(--title-font)">Projects -></a> 
+                </div>
             </div>
     
             <!-- More -->
-            <div class="home_block home_more">
-                <p class="center">Available for <b class="emphasize">freelance work</b></p>
-                <br/>
-                <a href="#email">
-                    <div class="button full_width bold button_blue" id="call_to_action">
-                        <p>Email me</p>
-                        <div class="button_shade"></div>
-                    </div>
-                </a>
+            <div class="home_block home_more" data-mouse-highlight="highlight">
+                <div class="inner">
+                    <p class="center">Available for <b class="emphasize">freelance work</b></p>
+                    <br/>
+                    <a href="#email">
+                        <div class="button full_width bold button_blue" id="call_to_action">
+                            <p>Email me</p>
+                            <div class="button_shade"></div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
