@@ -15,11 +15,15 @@ body.theme_light {
     --project-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
     --project-box-shadow-hover: 6px 6px 16px rgba(0, 0, 0, 0.2);
 }
+body.theme_light #banner.home_banner {
+    background-color: var(--night-main-bg);
+}
 
 /* Landing */
-/* #banner {
-    background-color: var(--main-bg);
-} */
+#nav.nav_transparent:not(.menu_open) {
+    background-color: var(--night-transparent-color);
+    /* backdrop-filter: blur(4px); */
+}
 #banner.home_banner {
     position: absolute;
     inset: 0;
@@ -36,7 +40,7 @@ body.theme_light {
     /* transform: scale(1.3); */
 }
 #banner.home_banner > canvas {
-    filter: saturate(50%) opacity(0.6);
+    filter: hue-rotate(260deg) opacity(0.6);
 }
 #deco1, #deco2 {
     content: "";
@@ -67,9 +71,9 @@ body.theme_light {
     transform: skew(-9deg);
 }
 
-#nav.nav_transparent:not(.menu_open) {
+/* #nav.nav_transparent:not(.menu_open) {
     background-color: var(--main-bg);
-}
+} */
 
 /* .theme_light #banner.video_main {
     filter: invert() hue-rotate(180deg) brightness(90%);

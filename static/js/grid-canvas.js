@@ -17,9 +17,7 @@ const config = {
 // PIXI setup
 const container = document.getElementById("banner");
 // const debug = document.getElementById("debug");
-const app = new PIXI.Application({
-    backgroundAlpha: 0
-});
+const app = new PIXI.Application();
 await app.init({
     background: '#181a30',
     backgroundAlpha: 0,
@@ -70,6 +68,9 @@ const appSize = {
 // Textures
 const gridTexture = await PIXI.Assets.load("/assets/canvas/grid8.png");
 const simplexTexture = await PIXI.Assets.load("/assets/canvas/simplex1.png");
+// const displaceWaterTexture = await PIXI.Assets.load("/assets/canvas/displace_water2.jpg");
+// const displaceWaterTexture = await PIXI.Assets.load("/assets/canvas/displace_simplex.png");
+const donutTexture = await PIXI.Assets.load("/assets/canvas/donut.png");
 
 
 // Container
@@ -130,10 +131,32 @@ const mouseElement = new PIXI.Graphics().circle(0, 0, 175).fill("white");
 mouseElement.blendMode = config.noise2BlendMode;
 
 const mouseElementBlurFilter = new PIXI.BlurFilter();
-mouseElementBlurFilter.blur = 120;
+mouseElementBlurFilter.strength = 120;
 mouseElement.filters = [mouseElementBlurFilter];
 
 blendContainer.addChild(mouseElement);
+
+
+// Donut
+const donutBlurFilter = new PIXI.BlurFilter();
+donutBlurFilter.strength = 100;
+
+
+// Displacement map element
+// const displace = new PIXI.Sprite(displaceWaterTexture);
+// // displace.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
+// displace.width = app.view.width;
+// displace.height = app.view.height;
+// displace.padding = 2;
+// displace.scale.set(1);
+// displace.anchor.set(0.5);
+
+// const displacementFilter = new PIXI.DisplacementFilter({ sprite: displace, scale: { x: app.view.width, y: app.view.height } });
+// displace.position = displace.position;
+
+// app.stage.filters = [ displacementFilter ];
+
+// blendContainer.addChild(displace);
 
 
 
@@ -208,11 +231,48 @@ blendContainer.addChild(mouseElement);
 // Mouse movement
 app.stage.eventMode = 'static';
 app.stage.hitArea = app.screen;
+app.stage.interactive = true;
 
 // Follow the pointer
 app.stage.addEventListener('pointermove', event => {
     mouseElement.position.copyFrom(event.global);
 });
+
+// Ripple
+let rippleID = 0;
+const ripples = {};
+// app.stage.on('pointerup', rippleHandler);
+// app.stage.on('pointerenter', rippleHandler);
+// app.stage.on('pointerleave', rippleHandler);
+document.getElementById("home").addEventListener("click", rippleHandler);
+function rippleHandler(event) {
+    requestAnimationFrame(() => {
+        // Maximum
+        if(Object.keys(ripples).length > 12) return;
+
+        const donut = new PIXI.Sprite(donutTexture);
+        donut.blendMode = config.noise2BlendMode;
+        donut.anchor.set(0.5);
+        // donut.position.copyFrom(event.global);
+        donut.position = { x:event.pageX, y:event.pageY };
+        donut.alpha = 0.9;
+        
+        donut.filters = [donutBlurFilter];
+    
+        blendContainer.addChild(donut);
+    
+        // Register
+        const thisID = rippleID;
+        ripples[rippleID] = donut;
+        rippleID++;
+    
+        // Delete later
+        setTimeout(() => {
+            ripples[thisID].parent.removeChild(ripples[thisID]);
+            delete ripples[thisID];
+        }, 1500);
+    })
+}
 
 
 // Ticker
@@ -229,7 +289,28 @@ app.ticker.add(({ deltaTime }) => {
     // grid.tilePosition.x = -Math.sin(elapsed/80) * 40;
     // grid.tilePosition.y = Math.cos(elapsed/80) * 40;
 
+    // Displacement
+    // displace.x = Math.sin(elapsed/1000)*500;
+    // displace.y = Math.cos(elapsed/1000)*500;
+    // if(rippling) {
+    //     displace.scale.x += 0.03;
+    //     displace.scale.y += 0.03;
+    //     if(displace.scale.x > 40) {
+    //         rippling = false;
+    //         displace.scale.set(1);
+    //     }
+    // }
 
+
+    // Ripples
+    for(const id in ripples) {
+        const donut = ripples[id];
+        donut.scale.x += 0.15;
+        donut.scale.y += 0.15;
+    }
+
+
+    // Noise layers
     const dist1 = 600;
     noise1.tilePosition.x = Math.sin(-elapsed/1500) * dist1 - dist1;
     noise1.tilePosition.y = Math.cos(-elapsed/1500) * dist1 - dist1;
@@ -238,6 +319,7 @@ app.ticker.add(({ deltaTime }) => {
     noise2.tilePosition.x = -Math.sin(-elapsed/1300) * dist2 - dist2;
     noise2.tilePosition.y = -Math.cos(-elapsed/1300) * dist2 - dist2;
 
+    // Mouse skew
     mouseElement.skew.x = Math.sin(elapsed/100) / 5;
     mouseElement.skew.y = Math.cos(elapsed/80) / 5;
 });
