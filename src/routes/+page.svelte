@@ -83,9 +83,9 @@
     <script src="/js/obfuscate.js" defer></script>
     
     <!-- Canvas -->
-    <script src="https://pixijs.download/v8.6.2/pixi.js"></script>
-    <script src="https://github.com/pixijs/pixijs/releases/download/v8.6.2/advanced-blend-modes.js"></script>
-    <script src="https://github.com/pixijs/filters/releases/download/v6.0.5/pixi-filters.js"></script>
+    <script src="https://code.notkal.com/pixi-download/v8.6.2/pixi.js"></script>
+    <script src="https://code.notkal.com/pixi-download/v8.6.2/advanced-blend-modes.js"></script>
+    <script src="https://code.notkal.com/pixi-filters/v6.0.5/pixi-filters.js"></script>
     <script src="/js/grid-canvas.js" type="module"></script>
 
 </svelte:head>
