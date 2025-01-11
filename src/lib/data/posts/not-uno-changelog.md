@@ -10,10 +10,21 @@ modified: 11/26/2024
 id: not-uno-changelog
 tags: gamedev, changelog
 
-contents: [{"name":"November 26, 2024","id":"November-26-2024"},{"name":"November 12, 2024","id":"November-12-2024"},{"name":"November 10, 2024","id":"November-10-2024"},{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
+contents: [{"name":"December 6, 2024","id":"December-6-2024"},{"name":"November 26, 2024","id":"November-26-2024"},{"name":"November 12, 2024","id":"November-12-2024"},{"name":"November 10, 2024","id":"November-10-2024"},{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
 ---
 
 Update history for [NOT UNO](https://uno.notkal.com/)
+
+
+<article id="December-6-2024">
+<h2>December 6, 2024 <a href="#December-6-2024"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+
+- "Who goes first" config option
+- 7-0 rule deck
+- "How to play" button + menu in the footer
+- Fixed the deck not taking cards from the pile when it runs out
+
+</article>
 
 
 <article id="November-26-2024">
