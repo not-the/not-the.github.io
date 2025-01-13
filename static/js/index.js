@@ -636,7 +636,7 @@ document.querySelectorAll("[data-mouse-area]").forEach(area => area.addEventList
                 element.style.setProperty("--mouse-y", `${posY}px`);
             }
 
-            if(property === "all" || property === "perspective") {
+            if(["all", "perspective"].includes(property)) {
                 // if(options.three_d_effects) {
                     element.style.setProperty("--rotate-y", `${(posX - rect.width/2) / rect.width * 15}deg`);
                     element.style.setProperty("--rotate-x", `${(posY - rect.height/2) / rect.height * -15}deg`);

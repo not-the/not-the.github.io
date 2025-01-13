@@ -20,9 +20,6 @@
     --bg-color: ${info.card_accent ?? "var(--night-lighter-bg)"};
 `} data-mouse-highlight="all">
     <div class="inner">
-        <!-- BG -->
-        <div class="hover_bg"></div>
-
         <!-- Title -->
         <div class="upper">
             <h3>{info.title}</h3>

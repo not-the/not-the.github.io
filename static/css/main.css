@@ -1154,10 +1154,6 @@ nav .button_icon {
 .card .link_area > span {
     display: none;
 }
-.card:hover > .hover_bg,
-.card:focus-visible > .hover_bg {
-    opacity: 1;
-}
 
 .card > .inner {
     /* Dark mode */

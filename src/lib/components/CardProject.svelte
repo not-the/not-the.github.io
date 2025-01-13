@@ -58,9 +58,6 @@
     data-context={JSON.stringify(context)}
 >
     <div class="inner">
-        <!-- BG -->
-        <div class="hover_bg"></div>
-
         <!-- New pill -->
         {#if pill}
             <div class="card_pill">{pill}</div>
