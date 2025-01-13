@@ -756,6 +756,10 @@ document.querySelectorAll("[data-context]").forEach(element => element.addEventL
     menu.focus();
 }));
 
+/** Closes the context menu
+ * @param {String} text_to_copy Optional- text to be copied to the clipboard
+ * @returns {Boolean} True if the context menu was open
+ */
 function closeContextMenu(text_to_copy) {
     if(text_to_copy) navigator.clipboard.writeText(text_to_copy);
 
