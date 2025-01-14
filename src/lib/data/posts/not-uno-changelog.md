@@ -5,7 +5,7 @@ author: not-the
 banner: url('/assets/project/Not Uno Banner noicon dark.png')
 
 created: 11/1/2024
-modified: 11/26/2024
+modified: 1/11/2025
 
 id: not-uno-changelog
 tags: gamedev, changelog

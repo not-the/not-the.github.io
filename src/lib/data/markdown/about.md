@@ -71,7 +71,7 @@ contents: [{"name":"Contact","id":"contact"},{"name":"Privacy Policy & Cookies",
 <h2 id="copyright">Copyright & Attribution</h2>
 <p>
     <p class="emphasize" style="border-left: 6px solid var(--accent-color); padding-left: 16px;">
-        Ⓒ 2024 notkal.com<br/>
+        Ⓒ 2025 notkal.com<br/>
         All rights reserved
     </p>
     <ul>

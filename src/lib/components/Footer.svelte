@@ -102,7 +102,7 @@
         <br/>
 
         <!-- Copyright -->
-        <p class="emphasize">Ⓒ 2024 notkal.com</p>
+        <p class="emphasize">Ⓒ 2025 notkal.com</p>
         <br/>
         <a href="javascript:;" role="button" tabindex="0" onclick="toTop()">Return to top</a>
     </div>
