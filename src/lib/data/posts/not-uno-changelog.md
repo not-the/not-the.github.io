@@ -10,14 +10,25 @@ modified: 1/11/2025
 id: not-uno-changelog
 tags: gamedev, changelog
 
-contents: [{"name":"April 23, 2025","id":"April-23-2025"},{"name":"December 6, 2024","id":"December-6-2024"},{"name":"November 26, 2024","id":"November-26-2024"},{"name":"November 12, 2024","id":"November-12-2024"},{"name":"November 10, 2024","id":"November-10-2024"},{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
+contents: [{"name":"April 26, 2025","id":"April-26-2025"},{"name":"April 23, 2025","id":"April-23-2025"},{"name":"December 6, 2024","id":"December-6-2024"},{"name":"November 26, 2024","id":"November-26-2024"},{"name":"November 12, 2024","id":"November-12-2024"},{"name":"November 10, 2024","id":"November-10-2024"},{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
 ---
 
 Update history for [NOT UNO](https://uno.notkal.com/)
 
+<article id="April-26-2025">
+<h2>April 26, 2025 <a href="#April-26-2025"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+
+- You can now reconnect to a game after disconnecting or closing the tab
+    - Disconnected players will remain until they either reconnect or you choose to remove them
+- Private lobbies are now visible if you're on the same network (can be turned off by the host)
+- Added a character limit for chat messages (128)
+- Fixed wrong toast notifications disappearing early and gave toasts a cleaner close animation
+
+</article>
+
 
 <article id="April-23-2025">
-<h2>April 23, 2024 <a href="#April-23-2025"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+<h2>April 23, 2025 <a href="#April-23-2025"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
 
 - Card sorting toggle
 - The host can now kick users from public lobbies
