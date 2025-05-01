@@ -15,8 +15,15 @@ contents: [{"name":"April 26, 2025","id":"April-26-2025"},{"name":"April 23, 202
 
 Update history for [NOT UNO](https://uno.notkal.com/)
 
+<h3>Bug Reporting</h3>
+<p>
+If you find any problems or manage to crash the server (rip), send a <a href="/#contact">message with more info here</a>. Sorry in advance for any server downtime.
+</p>
+
 <article id="April-26-2025">
 <h2>April 26, 2025 <a href="#April-26-2025"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+
+<b class="emphasize">Update: This update has been temporary rolled back</b>
 
 - You can now reconnect to a game after disconnecting or closing the tab
     - Disconnected players will remain until they either reconnect or you choose to remove them
