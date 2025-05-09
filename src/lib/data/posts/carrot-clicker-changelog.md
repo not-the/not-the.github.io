@@ -7,15 +7,23 @@ banner: url('/assets/banner/gradient_2.png')
 buttons: [{"name":"Older changes","href":"https://carrot.notkal.com/changelog.txt","external":true}]
 
 created: 6/17/2023
-modified: 7/5/2023
+modified: 5/9/2025
 
 id: carrot-clicker-changelog
 tags: gamedev, changelog
 
-contents: [{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1.17.4","id":"dev-beta-1_17_4"},{"name":"Dev beta 1.17.2 Revision 2","id":"dev-beta-1_17_2-revision-2"},{"name":"Dev beta 1.17.2 Revision 1","id":"dev-beta-1_17_2-revision-1"},{"name":"Dev beta 1.17.3","id":"dev-beta-1_17_3"},{"name":"Stable Repository","id":"stable-repository"},{"name":"Dev beta 1.17.2","id":"dev-beta-1_17_2"},{"name":"Dev beta 1.17.1","id":"dev-beta-1_17_1"},{"name":"Dev beta 1.17","id":"dev-beta-1_17"},{"name":"Dev beta 1.16.16","id":"dev-beta-1_16_16"},{"name":"Dev beta 1.16.15.1","id":"dev-beta-1_16_15_1"},{"name":"Dev beta 1.16.15","id":"dev-beta-1_16_15"},{"name":"Dev beta 1.16.14","id":"dev-beta-1_16_14"},{"name":"Dev beta 1.16.13","id":"dev-beta-1_16_13"},{"name":"Dev beta 1.16.12","id":"dev-beta-1_16_12"},{"name":"Dev beta 1.16.11","id":"dev-beta-1_16_11"},{"name":"Dev beta 1.16.10","id":"dev-beta-1_16_10"},{"name":"Dev beta 1.16.9.1","id":"dev-beta-1_16_9_1"},{"name":"Dev beta 1.16.9","id":"dev-beta-1_16_9"},{"name":"Dev beta 1.16.8","id":"dev-beta-1_16_8"}]
+contents: [{"name":"Dev beta 1.17.5.1","id":"dev-beta-1_17_5_1"},{"name":"Dev beta 1.17.5","id":"dev-beta-1_17_5"},{"name":"Dev beta 1.17.4","id":"dev-beta-1_17_4"},{"name":"Dev beta 1.17.2 Revision 2","id":"dev-beta-1_17_2-revision-2"},{"name":"Dev beta 1.17.2 Revision 1","id":"dev-beta-1_17_2-revision-1"},{"name":"Dev beta 1.17.3","id":"dev-beta-1_17_3"},{"name":"Stable Repository","id":"stable-repository"},{"name":"Dev beta 1.17.2","id":"dev-beta-1_17_2"},{"name":"Dev beta 1.17.1","id":"dev-beta-1_17_1"},{"name":"Dev beta 1.17","id":"dev-beta-1_17"},{"name":"Dev beta 1.16.16","id":"dev-beta-1_16_16"},{"name":"Dev beta 1.16.15.1","id":"dev-beta-1_16_15_1"},{"name":"Dev beta 1.16.15","id":"dev-beta-1_16_15"},{"name":"Dev beta 1.16.14","id":"dev-beta-1_16_14"},{"name":"Dev beta 1.16.13","id":"dev-beta-1_16_13"},{"name":"Dev beta 1.16.12","id":"dev-beta-1_16_12"},{"name":"Dev beta 1.16.11","id":"dev-beta-1_16_11"},{"name":"Dev beta 1.16.10","id":"dev-beta-1_16_10"},{"name":"Dev beta 1.16.9.1","id":"dev-beta-1_16_9_1"},{"name":"Dev beta 1.16.9","id":"dev-beta-1_16_9"},{"name":"Dev beta 1.16.8","id":"dev-beta-1_16_8"}]
 ---
 
-<p>Update history for <a href="https://carrot.notkal.com/">Carrot Clicker</a></p>
+<p>Update history for <a href="https://carrot.notkal.com/">Legacy Carrot Clicker</a></p>
+
+<article id="dev-beta-1_17_5_1">
+    <h2>Dev beta 1.17.5.1 <a href="#dev-beta-1_17_5_1"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+    <p><i>not-the | 5/9/2025</i></p>
+    
+- Fixed key combo easter eggs not working
+- Fixed secret achievements not appearing in the achievement list
+</article>
 
 <article id="dev-beta-1_17_5">
     <h2>Dev beta 1.17.5 <a href="#dev-beta-1_17_5"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
