@@ -10,7 +10,7 @@ modified: 5/12/2025
 id: not-uno-changelog
 tags: gamedev, changelog
 
-contents: [{"name":"May 16, 2025","id":"May-16-2025"},{"name":"May 12, 2025","id":"May-12-2025"},{"name":"April 26, 2025","id":"April-26-2025"},{"name":"April 23, 2025","id":"April-23-2025"},{"name":"December 6, 2024","id":"December-6-2024"},{"name":"November 26, 2024","id":"November-26-2024"},{"name":"November 12, 2024","id":"November-12-2024"},{"name":"November 10, 2024","id":"November-10-2024"},{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
+contents: [{"name":"May 18, 2025","id":"May-18-2025"},{"name":"May 16, 2025","id":"May-16-2025"},{"name":"May 12, 2025","id":"May-12-2025"},{"name":"April 26, 2025","id":"April-26-2025"},{"name":"April 23, 2025","id":"April-23-2025"},{"name":"December 6, 2024","id":"December-6-2024"},{"name":"November 26, 2024","id":"November-26-2024"},{"name":"November 12, 2024","id":"November-12-2024"},{"name":"November 10, 2024","id":"November-10-2024"},{"name":"November 8, 2024","id":"November-8-2024"},{"name":"November 1, 2024","id":"November-1-2024"}]
 ---
 
 Update history for [NOT UNO](https://uno.notkal.com/)
@@ -19,6 +19,16 @@ Update history for [NOT UNO](https://uno.notkal.com/)
 <p>
 If you find any problems or manage to crash the server (rip), send a <a href="/#contact">message with more info here</a>. Sorry in advance for any server downtime.
 </p>
+
+<article id="May-18-2025">
+<h2>May 18, 2025 <a href="#May-18-2025"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
+
+- Option to disable emotes
+- Changed layout of desktop-sized lobby screen to have config on the right side
+- Forfeit penalty now has the remaining player win instead of everyone returning to lobby
+- Edit profile button on the lobby screen
+
+</article>
 
 <article id="May-16-2025">
 <h2>May 16, 2025 <a href="#May-16-2025"><img src="/assets/icon/link.svg" alt="Copy a link to this section" class="icon article_url_button" role="button" tabindex="0"></a></h2>
