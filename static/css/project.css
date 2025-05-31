@@ -63,6 +63,8 @@ header .title_section #path a:hover { color: white; }
     /* background-color: var(--main-bg);
     border: 1px solid var(--border-transparent);
     border-radius: 12px; */
+
+    flex-direction: row-reverse;
 }
 /* Info */
 .info_column {
@@ -209,7 +211,7 @@ article h2 .article_url_button:focus-visible { opacity: 1; }
     #main, header .title_section { flex-direction: column; }
     .title_buttons { padding-top: 6px; }
     #main {
-        flex-direction: column-reverse;
+        flex-direction: column;
         padding: 0 9px;
     }
     .info_column { 

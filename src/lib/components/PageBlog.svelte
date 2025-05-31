@@ -49,11 +49,6 @@
 
 <!---------- Main ---------->
 <main id="main" class="doc container flex">
-    <!-- Body -->
-    <div class="body_column">
-        {@html body}
-    </div>
-
     <!-- Sidebar -->
     <div class="info_column">
         {#if !info.hide_info}
@@ -126,6 +121,11 @@
 
             </div>
         {/if}
+    </div>
+
+    <!-- Body -->
+    <div class="body_column">
+        {@html body}
     </div>
 </main>
 
