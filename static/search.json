@@ -18,6 +18,12 @@
         "type": "Home"
     },
     {
+        "name": "Email me",
+        "icon": "/assets/icon.png",
+        "url": "/#email",
+        "type": "Home"
+    },
+    {
         "name": "Blog",
         "icon": "/assets/icon.png",
         "url": "/posts",
@@ -33,7 +39,7 @@
         "name": "not-the on Github",
         "icon": "/assets/icon/github.svg",
         "url": "https://github.com/not-the",
-        "type": "Home"
+        "type": "github.com/not-the"
     },
 
 
