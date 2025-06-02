@@ -147,14 +147,7 @@
 
         <!-- CSS -->
         <style type="text/css">
-            #reduce_motion,
-            #search_button,
-            #options_button {
-                /* filter: brightness(50%); */
-                opacity: 0.6;
-                cursor: unset;
-            }
-            #theme_button:hover .button_icon { transform: none; }
+            /* Notice - JS turned off */
             #noscript {
                 position: absolute;
                 left: 24px;

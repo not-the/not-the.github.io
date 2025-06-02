@@ -311,128 +311,132 @@ const toast = {
     }
 }
 
-/** Palette */
-function palette(close) {
-    let p = document.querySelector('.palette'); // Palette already open
-    if(p !== null || close) return p?.remove();
+/** Search Palette */
+const palette = {
+    open(state=true) {
+        let pElement = document.querySelector('.palette'); // Palette already open
+        if(pElement !== null || !state) return this.close();
 
-    if(searchdata === undefined) searchdata = get('/search.json', true);
+        if(searchdata === undefined) searchdata = get('/search.json', true);
 
-    // if(close) return;
-    let e = document.createElement('div');
-    e.className = 'overlay palette';
+        // if(close) return;
+        let e = document.createElement('div');
+        e.className = 'overlay palette';
 
-    function closePalette() {
-        document.querySelector('.palette')?.remove();
-    }
+        // HTML
+        e.addEventListener('click', event => { let classes = event.target.classList; if(classes.contains('overlay') || classes.contains('palette_inner')) this.close() });
+        body.append(e);
+        body.classList.add("palette_open");
+        document.getElementById("palette_search").disabled = false;
+        document.getElementById("palette_search").tabIndex = "0";
+        document.getElementById("palette_search").ariaHidden = false;
+        document.getElementById("search_wrapper").ariaHidden = false;
 
-    // HTML
-    e.innerHTML = `
-    <div class="palette_inner">
-        <div class="dialog_content">
-            <label for="palette_search">
-                <svg class="palette_symbol" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M375.478-306.999q-114.087 0-193.544-79.457Q102.477-465.913 102.477-580q0-114.087 79.457-193.544 79.457-79.457 193.544-79.457 114.087 0 193.544 79.457Q648.479-694.087 648.479-580q0 45.13-12.87 83.283-12.869 38.152-34.608 67.021l219.478 220.044q14.956 15.522 14.956 37.326 0 21.805-15.522 36.761-14.956 14.957-37.043 14.957-22.088 0-37.044-14.957L526.913-354.477q-29.435 21.739-68.152 34.608-38.718 12.87-83.283 12.87Zm0-106.002q69.913 0 118.456-48.543Q542.477-510.087 542.477-580q0-69.913-48.543-118.456-48.543-48.543-118.456-48.543-69.913 0-118.456 48.543Q208.479-649.913 208.479-580q0 69.913 48.543 118.456 48.543 48.543 118.456 48.543Z"/></svg>
-                <input type="text" name="palette_search" id="palette_search" placeholder="Type to search" autocomplete="off" enterkeyhint="go">
-            </label>
-            <div class="palette_results"></div>
-        </div>
-    </div>
-    `;
-    e.addEventListener('click', event => { let classes = event.target.classList; if(classes.contains('overlay') || classes.contains('palette_inner')) closePalette() });
-    body.append(e);
+        // Focus
+        // const palette = document.querySelector('.palette');
+        const search_bar = document.getElementById('palette_search');
+        const results = document.querySelector('.palette_results');
+        search_bar.focus();
+        search_bar.select();
+        search_bar.addEventListener('keyup', search);
 
-    // Focus
-    let palette = document.querySelector('.palette');
-    let search_bar = document.getElementById('palette_search');
-    let results = document.querySelector('.palette_results');
-    search_bar.focus();
-    search_bar.addEventListener('keyup', search);
-
-    /** Number min/max */
-    function clamp(value, min, max) {
-        if(value < min) value = min;
-        else if(value > max) value = max;
-        return value;
-    }
-
-    // Arrow keys
-    let items; // Results list
-    let index = 0;
-    let active = 0;
-    search_bar.addEventListener('keydown', event => {
-        if(event.key === 'Enter') {
-            items[active].click(); // Enter
-            closePalette();
-        }
-        if(!event.key.startsWith('Arrow')) return;
-        items.forEach(item => item.classList.remove('active')); // Reset
-        if(event.key === 'ArrowDown') active++;
-        else if(event.key === 'ArrowUp') active--;
-        active = clampLoop(active, items.length);
-        items[active].classList.add('active');
-        items[active].scrollIntoView({
-            block:"nearest",
-            behavior:"smooth"
-        });
-
-        // Preventdefault
-        if(event.key === 'ArrowDown' || event.key === 'ArrowUp') event.preventDefault();
-    })
-    // search();
-
-    /** Populate search results */
-    function search(event) {
-        if(event.key.startsWith('Arrow')) return;
-        let html = '';
-        let term = search_bar.value;
-        let unsorted = [];
-        index = 0;
-        active = 0;
-        for(data of searchdata) {
-            let includes = data.name.toLowerCase().includes(term);
-            // let threshold = includes ? 1 : 3;
-            let threshold = 3;
-            // Typo correction
-            let proximity = levenshtein(term.toLowerCase(), data.name.toLowerCase());
-            let word_proximity = false;
-            for(let word of data.name.split(' ')) if(levenshtein(term.toLowerCase(), word.toLowerCase()) <= threshold-1) word_proximity = true;
-
-            // Matches search term
-            if(
-                // term === '' || // Is empty
-                term !== '' && // Isn't empty
-                (includes // Includes search term
-                || word_proximity || proximity <= threshold) // Typo proximity
-            ) {
-                let src = data.icon ? `src="${data.icon}" alt="" ${data.filter_icon ? 'class="icon"' : ''}` : '';
-                let external = data.type === 'url';
-                proximity -= includes ? 10 : 0; // Increase rank if there is an exact match
-                let item = `
-                <a class="item" href="${data.url}">
-                    <img ${src}>
-                    <h4>${data.name}</h4>
-                    <p class="secondary_text">
-                        ${external ? data.url.replace(/https:\/\//g,'') : data.type}
-                    </p>
-                    ${external ? '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="ext"><path d="M6 2H4C2.89543 2 2 2.89543 2 4V10C2 11.1046 2.89543 12 4 12H10C11.1046 12 12 11.1046 12 10V8H10V10H4V4H6V2Z" fill="white"/><path d="M9.20711 1H12.5C12.7761 1 13 1.22386 13 1.5V4.79289C13 5.23835 12.4614 5.46143 12.1464 5.14645L11.182 4.18197L8.82493 6.53902C8.43441 6.92954 7.80124 6.92954 7.41072 6.53902C7.0202 6.14849 7.0202 5.51533 7.41072 5.1248L9.76776 2.76776L8.85355 1.85355C8.53857 1.53857 8.76165 1 9.20711 1Z" fill="white"/></svg>':''}
-                </a>`;
-
-                index++;
-                unsorted.push({item, proximity});
+        // Arrow keys
+        let items; // Results list
+        let index = 0;
+        let active = 0;
+        search_bar.addEventListener('keydown', event => {
+            if(event.key === 'Enter') {
+                items[active].click(); // Enter
+                palette.close();
             }
+            if(!event.key.startsWith('Arrow')) return;
+            items.forEach(item => item.classList.remove('active')); // Reset
+            if(event.key === 'ArrowDown') active++;
+            else if(event.key === 'ArrowUp') active--;
+            active = clampLoop(active, items.length);
+            items[active].classList.add('active');
+            items[active].scrollIntoView({
+                block:"nearest",
+                behavior:"smooth"
+            });
+
+            // Preventdefault
+            if(event.key === 'ArrowDown' || event.key === 'ArrowUp') event.preventDefault();
+        })
+
+
+        /** Populate search results */
+        function search(event) {
+            if(event.key.startsWith('Arrow')) return;
+            let html = '';
+            const term = search_bar.value;
+            const unsorted = [];
+            index = 0;
+            active = 0;
+            for(data of searchdata) {
+                const includes = data.name.toLowerCase().includes(term);
+                // const threshold = includes ? 1 : 3;
+                const threshold = 3;
+                // Typo correction
+                let proximity = levenshtein(term.toLowerCase(), data.name.toLowerCase());
+                let word_proximity = false;
+                for(let word of data.name.split(' ')) if(levenshtein(term.toLowerCase(), word.toLowerCase()) <= threshold-1) word_proximity = true;
+
+                // Matches search term
+                if(
+                    // term === '' || // Is empty
+                    term !== '' && // Isn't empty
+                    (includes // Includes search term
+                    || word_proximity || proximity <= threshold) // Typo proximity
+                ) {
+                    let src = data.icon ? `src="${data.icon}" alt="" ${data.filter_icon ? 'class="icon"' : ''}` : '';
+                    let external = data.type === 'url';
+                    proximity -= includes ? 10 : 0; // Increase rank if there is an exact match
+                    let item = `
+                    <a class="item flex flex_center_vertically" href="${data.url}">
+                        <img ${src}>
+                        <div class="inner flex flex_center_vertically">
+                            <div class="title">
+                                <h4>${data.name}</h4>
+                            </div>
+                            <div class="tagline flex flex_center_vertically">
+                                <p class="secondary_text">
+                                    ${external ? data.url.replace(/https:\/\//g,'') : data.type}
+                                </p>
+                                ${external ? '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="ext"><path d="M6 2H4C2.89543 2 2 2.89543 2 4V10C2 11.1046 2.89543 12 4 12H10C11.1046 12 12 11.1046 12 10V8H10V10H4V4H6V2Z" fill="white"/><path d="M9.20711 1H12.5C12.7761 1 13 1.22386 13 1.5V4.79289C13 5.23835 12.4614 5.46143 12.1464 5.14645L11.182 4.18197L8.82493 6.53902C8.43441 6.92954 7.80124 6.92954 7.41072 6.53902C7.0202 6.14849 7.0202 5.51533 7.41072 5.1248L9.76776 2.76776L8.85355 1.85355C8.53857 1.53857 8.76165 1 9.20711 1Z" fill="white"/></svg>':''}
+                            </div>
+                        </div>
+                    </a>`;
+
+                    index++;
+                    unsorted.push({item, proximity});
+                }
+            }
+
+            // Sort
+            unsorted.sort((a, b) => a.proximity - b.proximity);
+            for(let item of unsorted) html += item.item;
+
+            // No results
+            if(html === '' && term !== '') html = '<p class="secondary_text center">No results found</p>';
+            results.innerHTML = html;
+
+            // Highlight result
+            items = Array.from(results.querySelectorAll('.item'));
+            if(items[active]) items[active].classList.add('active');
         }
+    },
 
-        // Sort
-        unsorted = unsorted.sort((a, b) => a.proximity - b.proximity);
-        for(let item of unsorted) html += item.item;
-
-        // Update page
-        if(html === '' && term !== '') html = '<p class="secondary_text center">No results found</p>';
-        results.innerHTML = html;
-        items = Array.from(palette.querySelectorAll('.item'));
-        items[active].classList.add('active');
+    close() {
+        document.querySelector('.palette')?.remove();
+        body.classList.remove("palette_open");
+        document.getElementById("palette_search").disabled = true;
+        document.getElementById("palette_search").tabIndex = "-1";
+        document.getElementById("palette_search").ariaHidden = true;
+        document.getElementById("search_wrapper").ariaHidden = true;
     }
 }
+
 
 /** Dialog (enlarge image but for text) */
 // function dialog(event) {
@@ -549,7 +553,7 @@ function articleCopyURL(event) {
 menu_button.addEventListener('click', toggleMenu);
 backdrop.addEventListener('click', toggleMenu);
 document.getElementById('options_button').addEventListener('click', () => options.menu());
-document.getElementById('search_button')?.addEventListener('click', () => palette());
+document.getElementById('search_button').addEventListener('click', () => palette.open());
 /** Click on figure image to enlarge */
 document.querySelectorAll('figure img').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', enlargeImage); });
 // document.querySelectorAll('.dialog_trigger').forEach(e => { e.setAttribute("tabindex", "0"); e.addEventListener('click', dialog); });
@@ -561,12 +565,12 @@ document.addEventListener("keydown", e => {
     if(key === "enter") document.activeElement.click();
     else if(key === "escape") {
         enlargeImage(false, true);
-        palette(true);
+        palette.open(false);
         options.menu(true);
     }
     else if((e.ctrlKey || e.metaKey) && key === 'k') {
         e.preventDefault();
-        palette();
+        palette.open();
     }
 });
 
@@ -673,8 +677,6 @@ const contentsContainer = document.querySelector(".table_of_contents");
 if(contentsContainer) {
     const contentsList = contentsContainer.querySelectorAll("a");
     document.addEventListener("scroll", event => {
-        console.log("##################");
-
         let found = false;
 
         for(const link of contentsList) {
@@ -770,3 +772,49 @@ function closeContextMenu(text_to_copy) {
         return true;
     }
 }
+
+
+// Nav button highlighting
+const nav_list = document.getElementById("nav_list");
+document.querySelectorAll("a.nav_item").forEach(item => {
+    item.addEventListener("mouseover", event => navHoverHandler(event.target));
+    item.addEventListener("focus", event => navHoverHandler(event.target));
+
+    /** Button bubble effect */
+    item.addEventListener("pointerdown", event => {
+        // Get click position within element
+        const rect = event.target.getBoundingClientRect();
+        const x = Math.floor(event.clientX - rect.left);
+        const y = Math.floor(event.clientY - rect.top);
+
+        // Bubble position
+        item.style.setProperty("--click-x", `${x}px`);
+        item.style.setProperty("--click-y", `${y}px`);
+
+        // Animate
+        item.setAttribute("data-clicked", false);
+        item.offsetWidth;
+        item.setAttribute("data-clicked", true);
+    })
+});
+function navHoverHandler(element) {
+    // Mobile
+    if(window.innerWidth <= mobile_layout_width) return;
+
+    console.log(window.innerWidth > mobile_layout_width);
+
+    const navBox = nav.getBoundingClientRect();
+    const box = element.getBoundingClientRect();
+    const left  = box.left - navBox.left;
+    const top   = box.top - navBox.top;
+    
+    nav_list.style = `
+    --top: ${top}px;
+    --left: ${left}px;
+    --width: ${box.width}px;
+    --height: ${box.height}px;
+    `;
+}
+
+// Initial
+navHoverHandler(Array.from(document.querySelectorAll("a.nav_item"))[0]);
