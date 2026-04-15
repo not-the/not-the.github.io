@@ -196,7 +196,7 @@
     
     <!-- List -->
     <div class="cards_container" id="project_cards">
-        <CardProject projectID="not-uno" pill="New" />
+        <CardProject projectID="not-uno" />
         <CardProject projectID="sand-toy" />
         <CardProject projectID="carrot-clicker" />
         <CardProject projectID="character-creator" />
